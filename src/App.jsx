@@ -10,10 +10,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <HashRouter>
-      <div>
-      <Routes>
-        <Route path='/' element={    
+  
             <div>
               <a href="https://vitejs.dev" target="_blank">
                 <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -35,12 +32,6 @@ function App() {
             </p>
             <h1>Hello</h1>
           </div>
-
-      }/>
-
-      </Routes>
-      </div>
-      </HashRouter>
   )
 }
 
