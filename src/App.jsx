@@ -1,5 +1,6 @@
 
 import './App.css'
+import { Link } from 'react-router-dom'
 
 function App() {
 
@@ -7,12 +8,12 @@ function App() {
     <>
     <div className="container h-screen">
       <nav className='bg-purple-300 '>
-        <ul className='inline-flex space-x-9 text-xl'>
-          <li className='float-left'><a href="/">Maliha</a></li>
-          <li className='float-right'><a href="">Projects</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
+        <div className="flex flex-row">
+          <Link to="/" className='basis-1/4'>Home</Link>
+          <Link to="/about" className='basis-1/3'>About</Link>
+          <Link to="/blog" className='basis-1/3'>Blog</Link>
+          <Link to="/contact" className='basis-1/3'>Contact</Link>
+        </div>
       </nav>
       <div className="section">
         
