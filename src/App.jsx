@@ -15,11 +15,12 @@ function App() {
           <Link to="/contact" className='basis-1/3'>Contact</Link>
         </div>
       </nav>
-      <div className="section p-4">
-        
-          <h1 className='decoration-from-font text-2xl'>Hello! this is Maliha Tunzira.</h1>
+      <section>
+        <div className="p-4">
+          <h1 className='necro-one-regular text-2xl'>Hello! this is Maliha Tunzira.</h1>
           <p className='text-3xl'>I dont know what to write. but I am not going to be anxious. I will write whatever i want and move on. because i am not publishing it yet</p>
       </div>
+      </section>
     </div>
     </>
   )
