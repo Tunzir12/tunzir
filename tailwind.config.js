@@ -1,7 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-/* adding google font in tailwaind theme */
-const necroFont = require('tailwindcss/defaultTheme')
 
 export default {
   content: [
@@ -11,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        necro: ['"Nerko One"', ...necroFont.fontFamily.sans]
+        'nerko' : ['Nerko One', 'system-ui'],
       }
     },
   },

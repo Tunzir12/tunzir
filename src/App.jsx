@@ -17,8 +17,11 @@ function App() {
       </nav>
       <section>
         <div className="p-4">
-          <h1 className='necro-one-regular text-2xl'>Hello! this is Maliha Tunzira.</h1>
-          <p className='text-3xl'>I dont know what to write. but I am not going to be anxious. I will write whatever i want and move on. because i am not publishing it yet</p>
+          <h1 className='font-nerko p-6 text-4xl'>Hello! this is Maliha Tunzira.</h1>
+          <p className='text-xl'> Welcome to my page!
+            <br />
+            This project is for self-learning projects. Where I learn different functions and its use everyday. If some page is not working then it is under construction.
+            </p>
       </div>
       </section>
     </div>
