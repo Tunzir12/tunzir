@@ -24,6 +24,7 @@ function App() {
             <br />
             This project is for self-learning projects. Where I learn different functions and its use everyday. If some page is not working then it is under construction.
             </p>
+            <p>why footer is not showing at all</p>
       </div>
       </section>
       <footer>
@@ -32,6 +33,7 @@ function App() {
           <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>
             < FontAwesomeIcon icon={faLinkedin} /> 
           </a>
+          <p>why footer is not showing at all</p>
           <a href="https://github.com/Tunzir12" target='_blank'>
              <FontAwesomeIcon icon={faGithub} />
           </a>
