@@ -10,6 +10,7 @@ export default {
     extend: {
       fontFamily: {
         'nerko' : ['Nerko One', 'system-ui'],
+        'nanum' : ['Nanum Pen Script', 'cursive'],
       }
     },
   },
