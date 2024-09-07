@@ -1,6 +1,8 @@
 
 import './App.css'
 import { Link } from 'react-router-dom'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 function App() {
 
@@ -24,6 +26,20 @@ function App() {
             </p>
       </div>
       </section>
+      <footer>
+        <div className="p-20 flex flex-row space-x-6 justify-center text-xl">
+          <caption>Follow me on: </caption>
+          <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>
+            < FontAwesomeIcon icon={faLinkedin} /> 
+          </a>
+          <a href="https://github.com/Tunzir12" target='_blank'>
+             <FontAwesomeIcon icon={faGithub} />
+          </a>
+          <button className='bg-blue-500'>
+            Ask for CV
+          </button>
+        </div>
+      </footer>
     </div>
     </>
   )
