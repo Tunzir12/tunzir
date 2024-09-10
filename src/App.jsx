@@ -29,10 +29,10 @@ function App() {
       <footer className='font-nanum'>
         <div className="p-20 flex flex-row space-x-6 justify-center text-xl">
           <span>Follow me on: </span>
-          <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>
+          <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank' className='text-purple-600'>
             < FontAwesomeIcon icon={faLinkedin} /> 
           </a>
-          <a href="https://github.com/Tunzir12" target='_blank'>
+          <a href="https://github.com/Tunzir12" target='_blank' className='text-purple-600'>
              <FontAwesomeIcon icon={faGithub} />
           </a>
           <button className='bg-blue-500'>
