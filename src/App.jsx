@@ -17,7 +17,7 @@ function App() {
           <Link to="/contact" className='basis-1/3'>Contact</Link>
         </div>
       </nav>
-      <section>
+      <section className='justify-center'>
         <div className="p-4 font-nanum text-3xl ">
           <h1 className='font-nerko p-6 text-4xl text-purple-600'>Hello! this is Maliha Tunzira.</h1>
           <p className='text-xl'> Welcome to my page!
@@ -28,7 +28,7 @@ function App() {
       </section>
       <footer className='font-nanum'>
         <div className="p-20 flex flex-row space-x-6 justify-center text-xl">
-          <caption>Follow me on: </caption>
+          <span>Follow me on: </span>
           <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>
             < FontAwesomeIcon icon={faLinkedin} /> 
           </a>
