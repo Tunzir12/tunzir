@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'nerko' : ['Nerko One', 'system-ui'],
-        'nanum' : ['Nanum Pen Script', 'cursive'],
+        'logo' : ['Lovers Quarrel','cursive'],
+        'bebas' : ['Bebas Neue', 'sans-sherif'],
+        'open' : ['Open Sans', 'sans-sherif'],
       }
     },
   },
