@@ -1,9 +1,16 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
     text-align: center;
+    background-color:#6d90a0;
   }
+nav{
+  color: #e6dcd5;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;  
+}
+section{
+  color: #e6dcd5
+}
   
 @tailwind base;
 @tailwind components;
