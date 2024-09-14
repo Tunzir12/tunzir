@@ -21,8 +21,8 @@ function App() {
           </div>
       </nav>
 
-      <section className='p-10 grid grid-cols-3'>
-        <div className="p-4 font-sans text-3xl col-span-2 ">
+      <section className='p-10 grid grid-cols-4'>
+        <div className="p-10 font-sans text-3xl col-span-3 ">
           <h1 className='font-nerko p-6 text-4xl '>Hello! this is Maliha Tunzira.</h1>
           <p className='text-3xl'> Welcome to my page!
             <br />
