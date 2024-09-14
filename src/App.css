@@ -1,15 +1,18 @@
 #root {
     text-align: center;
-    background-color:#6d90a0;
+    background-color:#f3eee7;
+    padding-left: 50px;
+    padding-right: 50px;
   }
+
 nav{
-  color: #e6dcd5;
+  color: #7d4616;
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 20px;  
 }
 section{
-  color: #e6dcd5
+  color: #2D2D2D;
 }
   
 @tailwind base;

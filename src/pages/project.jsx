@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
-const Blog = () => {
+const Project = () => {
   return (
     <div>
       <nav className=' bg-white font-nanum p-10'>
@@ -18,4 +18,4 @@ const Blog = () => {
   )
 }
 
-export default Blog
+export default Project
