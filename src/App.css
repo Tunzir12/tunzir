@@ -1,6 +1,6 @@
 #root {
     text-align: center;
-    background-color:#f3eee7;
+    background-color:#f5e9da;
     padding-left: 50px;
     padding-right: 50px;
   }
@@ -14,7 +14,11 @@ nav{
 section{
   color: #2D2D2D;
 }
-  
+ 
+.name{
+  color: #518945
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

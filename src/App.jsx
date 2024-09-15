@@ -9,11 +9,10 @@ function App() {
 
   return (
     <>
-    <div className="container h-screen">
+    <div className="h-screen">
 
-      <nav className='font-bebas'>
-          
-          <div className="space-x-32 text-2xl">
+      <nav className='font-open'>
+          <div className="space-x-32 font-bold text-2xl">
             <Link to="/" className='hover:outline outline-offset-8 rounded-lg'>Home</Link>
             <Link to="/about" className='hover:outline outline-offset-8 rounded-lg'>About Me</Link>
             <Link to="/project" className='hover:outline outline-offset-8 rounded-lg' >Projects</Link>
@@ -21,19 +20,23 @@ function App() {
           </div>
       </nav>
 
-      <section className='p-10 grid grid-cols-4'>
-        <div className="p-10 font-sans text-3xl col-span-3 ">
-          <h1 className='font-nerko p-6 text-4xl '>Hello! this is Maliha Tunzira.</h1>
-          <p className='text-3xl'> Welcome to my page!
-            <br />
-            This project is for self-learning projects. Where I learn different functions and its use everyday. If some pages are not working then it is under construction.
+      <section className='pt-32 pr-28 pl-28 grid grid-cols-4'>
+        <div className=" pt-48 pl-16 text-left font-sans text-3xl col-span-3 ">
+          <h1 className='font-open font-bold text-4xl '>Hi! I am <span className='name'>Maliha Tunzira</span>.</h1>
+          <p className='text-xl'>
+             As a software engineer, I am passionate about creating software solutions that are user-friendly, accessible and environmental friendly.
             </p>
-      </div>
+        </div>
 
-      <div className='col-span-1'>
-        <img src={profile} alt='profile pic' className='object-fit rounded-xl'/>
-      </div>
+        <div className='col-span-1'>
+          <img src={profile} alt='profile pic' className='object-fit rounded-xl'/>
+        </div>
+      </section>
 
+      <section>
+        <div className="skill text-left p-20">
+          <h2 className='text-4xl'>Skills</h2>
+        </div>
       </section>
 
       <footer className='font-nanum'>
@@ -45,7 +48,7 @@ function App() {
           <a href="https://github.com/Tunzir12" target='_blank' className=''>
              <FontAwesomeIcon icon={faGithub} />
           </a>
-          <button className='bg-blue-500'>
+          <button className='bg-blue-500 hover: outline outline-offset-8'>
             Ask for CV
           </button>
         </div>
