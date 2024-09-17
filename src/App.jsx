@@ -2,8 +2,9 @@
 import './App.css'
 import { Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import profile from './assets/profile.jpeg'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
     <div className="h-screen">
 
       <nav className='font-open'>
-          <div className="space-x-32 font-bold text-2xl">
+          <div className="space-x-48 font-bold text-2xl">
             <Link to="/" className='hover:outline outline-offset-8 rounded-lg'>Home</Link>
             <Link to="/about" className='hover:outline outline-offset-8 rounded-lg'>About Me</Link>
             <Link to="/project" className='hover:outline outline-offset-8 rounded-lg' >Projects</Link>
@@ -33,24 +34,18 @@ function App() {
         </div>
       </section>
 
-      <section>
-        <div className="skill text-left p-20">
-          <h2 className='text-4xl'>Skills</h2>
-        </div>
-      </section>
 
-      <footer className='font-nanum'>
-        <div className="p-20 flex flex-row space-x-6 justify-center text-xl">
-          <span>Follow me on: </span>
+      <footer className='font-nanum bg-gray-400 fixed bottom-0 w-full'>
+        <div className=" flex flex-row space-x-6 justify-center text-xl">
           <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank' className=''>
             < FontAwesomeIcon icon={faLinkedin} /> 
+          </a>
+          <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank' className=''>
+            < FontAwesomeIcon icon={faEnvelope} /> 
           </a>
           <a href="https://github.com/Tunzir12" target='_blank' className=''>
              <FontAwesomeIcon icon={faGithub} />
           </a>
-          <button className='bg-blue-500 hover: outline outline-offset-8'>
-            Ask for CV
-          </button>
         </div>
       </footer>
 
