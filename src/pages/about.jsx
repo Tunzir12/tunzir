@@ -1,10 +1,19 @@
 import React from 'react'
 import '../App.css'
+import SkillBar from '../components/skillbar'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from '../components/navbar'
 
 const About = () => {
+  const skills = [
+    { skill: 'JavaScript', level: 90, color:'#518945' },
+    { skill: 'React', level: 85, color:'#7b3b16' },
+    { skill: 'C++', level: 90, color:'blue' },
+    { skill: 'Python', level: 75, color:'pink' },
+    { skill: 'Tailwind CSS', level: 70, color:'teal' },
+  ];
+
   return (
     <div className="container h-screen dark:bg-blue-950">
     <Navbar />
@@ -21,8 +30,12 @@ const About = () => {
     <section>
       <div className="skills p-16 dark:text-white">
       <h1 className='text-3xl text-left pl-8 font-bold'>Skills</h1>
-      
 
+        <div className="skillbar text-left">
+          {skills.map((skillObj, index) => (
+          <SkillBar key={index} skill={skillObj.skill} level={skillObj.level} color={skillObj.color}/>
+          ))}
+        </div>
       </div>
     </section>
 
