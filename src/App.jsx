@@ -26,8 +26,6 @@ function App() {
             <Link to="/about" className='' >
             Learn more about me.
             </Link>
-            
-
           </button>
         </div>
 
