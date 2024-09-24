@@ -1,55 +1,41 @@
 import React from 'react'
 import '../App.css'
-import SkillBar from '../components/skillbar'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Navbar from '../components/navbar'
+import { faCircleDot, faMoon } from '@fortawesome/free-regular-svg-icons'
+import { Link } from 'react-router-dom'
+
 
 const About = () => {
-  const skills = [
-    { skill: 'C++', level: 90, color:'blue' },
-    { skill: 'JavaScript', level: 90, color:'#518945' },
-    { skill: 'React', level: 85, color:'#7b3b16' },
-    { skill: 'C', level: 90, color:'blue' },
-    { skill: 'Python', level: 75, color:'pink' },
-    { skill: 'PHP', level: 80, color:'#7b3b44' },
-    { skill: 'Tailwind CSS', level: 70, color:'teal' },
-  ];
-
   return (
-    <div className="container  dark:bg-blue-950">
-    <Navbar />
+    <div className="h-screen">
+      {/*switch to dark mode */}
+      <div className="navbar p-14 text-left">
+        <FontAwesomeIcon className='text-2xl' icon={faMoon} />
+      </div>
 
-    <section className='pt-8 p-20'>
-      <div className="objective p-16 dark:text-white">
-        <h1 className='text-3xl pl-8 pb-4 font-bold'>About me</h1>
-        <div className="aboutme dark:bg-purple-950">
-        <p className='text-xl'>Hi! I am Maliha, currently pursuing a Master's in Computer Science at Linköping University, building on a solid foundation from my Bachelor's in Computer Science and Engineering from East West University. Being experienced in software quality assurance, with a background in manual testing, API testing, and performance testing, I am proficient in programming languages including Python, C++, JavaScript, and React.js. </p>
+      {/*Navbar */}
+      <div className="navlink grid grid-cols-2 font-bold">
+        <div className="col-span-1 text-left">
+          <Link to={'/'} className='pl-32'>Home</Link>
+        </div>
+        <div className="col-span-1 text-right ">
+          <Link to={'/contact'} className='pr-32'>Contact</Link>
         </div>
       </div>
-    </section>
 
-    <section>
-      <div className="p-32 dark:text-white">
-      <h1 className='text-3xl pl-8 font-bold'>Skills</h1>
-        <div className="p-20 aboutme">
-          <div className="text-left font-bold text-sm">
-            {skills.map((skillObj, index) => (
-            <SkillBar key={index} skill={skillObj.skill} level={skillObj.level} color={skillObj.color}/>
-            ))}
-          </div>
-        </div>
-
+      {/*About me section*/}
+      <div className="p-32 text-left">
+        <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> About me</h1>
+        <p className='aboutme'>Hi there! I'm Maliha Tunzira, a Computer Science graduate student at Linköping University with a passion for technology and a knack for problem-solving. My journey in tech has been fueled by curiosity and a desire to create meaningful solutions that make a difference.<br /><br />When I'm not coding or testing software, you can find me indulging in my hobbies. I love watching movies and documentaries, exploring new cultures through travel, playing video games, and experimenting in the kitchen with new recipes. These interests not only keep me entertained but also inspire my creativity in tech. <br /><br />I'm always eager to expand my skill set and stay updated on the latest trends in technology. You can check out my projects on GitHub at <a target='_blank' href="https:/github.com/Tunzir12">github.com/Tunzir12</a>, where I showcase my work and the technologies I'm passionate about.</p>
       </div>
-    </section>
 
-    <section>
-      <div className="hobbies">
-
+      {/*Skill section */}
+      <div className="pl-32 pr-32 pb-28 text-left">
+        <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Skills</h1>
       </div>
-    </section>
 
     </div>
+    
   )
 }
 
