@@ -15,10 +15,10 @@ const About = () => {
 
       {/*Navbar */}
       <div className="navlink grid grid-cols-2 font-bold">
-        <div className="col-span-1 text-left">
+        <div className="col-p-1 text-left">
           <Link to={'/'} className='pl-32'>Home</Link>
         </div>
-        <div className="col-span-1 text-right ">
+        <div className="col-p-1 text-right ">
           <Link to={'/contact'} className='pr-32'>Contact</Link>
         </div>
       </div>
@@ -32,6 +32,28 @@ const About = () => {
       {/*Skill section */}
       <div className="pl-32 pr-32 pb-28 text-left">
         <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Skills</h1>
+        <div className="p-4  font-bold grid grid-cols-7 gap-4">
+
+          <p className='p-2 rounded-md bg-cyan-600'>C</p>
+          <p className='rounded-md bg-pink-400'>C++</p>
+          <p className='p-2 rounded-md bg-teal-500'>JavaScript</p>
+          <p className='p-2 rounded-md bg-green-500'>Python</p>
+          <p className='p-2 rounded-md bg-yellow-200'>HTML</p>
+          <p className='p-2 rounded-md bg-emerald-300'>CSS</p>
+          <p className='p-2 rounded-md bg-orange-300'>PHP</p>
+          <p className='p-2 rounded-md bg-lime-500'>React.JS</p>
+          <p className='p-2 rounded-md bg-cyan-600'>Express.JS</p>
+          <p className='p-2 rounded-md bg-fuchsia-500'>Bootstrap</p>
+          <p className='p-2 rounded-md bg-red-400'>TailwindCSS</p>
+          <p className='p-2 rounded-md bg-pink-400'>C++</p>
+          <p className='p-2 rounded-md bg-teal-500'>JavaScript</p>
+          <p className='p-2 rounded-md bg-green-500'>Python</p>
+          <p className='p-2 rounded-md bg-yellow-200'>HTML</p>
+          <p className='p-2 rounded-md bg-emerald-300'>CSS</p>
+          <p className='p-2 rounded-md bg-orange-300'>PHP</p>
+          <p className='p-2 rounded-md bg-lime-500'>React.JS</p>
+          <p className='p-2 rounded-md bg-fuchsia-500'>Bootstrap</p>
+        </div>
       </div>
 
     </div>

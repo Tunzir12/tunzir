@@ -1,8 +1,7 @@
 #root {
     text-align: center;
     background: linear-gradient(rgb(253, 232, 177),rgb(246, 228, 193),white );
-    min-height: 100%;
-    position: relative;
+
   }
 
 nav{
@@ -11,13 +10,8 @@ nav{
   padding-right: 30px;
   padding-top: 20px;  
 }
-section{
-  color: #2D2D2D;
-}
- 
-.name{
-  color: #518945
-}
+
+
 
 .aboutme{
   border-radius: 2rem;
