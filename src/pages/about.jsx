@@ -56,6 +56,31 @@ const About = () => {
         </div>
       </div>
 
+      {/*Experience Section */}
+      <div className="pl-32 pr-32 pb-28 text-left">
+        <div className="p-10 bg-orange-400">
+          <table className='w-auto'>
+            <tr className=''>
+              <th>Position</th>
+              <td>QA Engineer</td>
+            </tr>
+            <tr>
+              <th>Company</th>
+              <td>QA Engineer</td>
+            </tr>
+            <tr>
+              <th>Duration</th>
+              <td>QA Engineer</td>
+            </tr>
+            <tr>
+              <th>Responsibilities</th>
+              <td>QA Engineer</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+
     </div>
     
   )
