@@ -58,26 +58,88 @@ const About = () => {
 
       {/*Experience Section */}
       <div className="pl-32 pr-32 pb-28 text-left">
-        <div className="p-10 bg-orange-400">
-          <table className='w-auto'>
-            <tr className=''>
-              <th>Position</th>
-              <td>QA Engineer</td>
-            </tr>
-            <tr>
-              <th>Company</th>
-              <td>QA Engineer</td>
-            </tr>
-            <tr>
-              <th>Duration</th>
-              <td>QA Engineer</td>
-            </tr>
-            <tr>
-              <th>Responsibilities</th>
-              <td>QA Engineer</td>
-            </tr>
-          </table>
-        </div>
+
+          <div className="grid grid-cols-5 pb-4 bg-pink-400">
+            <div className="col-span-1">
+              <h1>Title</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Company</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Duration</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Responsibilities</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-5 pb-4">
+            <div className="col-span-1">
+              <h1>Title</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Company</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Duration</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Responsibilities</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-5 pb-4">
+            <div className="col-span-1">
+              <h1>Title</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Company</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Duration</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+            <div className="col-span-1">
+              <h1>Responsibilities</h1>
+            </div>
+            <div className="col-span-4">
+              <p>Qa Engineer</p>
+            </div>
+          </div>
+
       </div>
 
 
