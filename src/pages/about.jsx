@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div className="h-screen">
+    <div className="min-h-screen bg-gradient-to-r from-Beige to-white to-90%">
       {/*switch to dark mode */}
       <div className="navbar p-14 text-left">
         <FontAwesomeIcon className='text-2xl' icon={faMoon} />
@@ -58,95 +58,26 @@ const About = () => {
 
       {/*Experience Section */}
       <div className="pl-32 pr-32 pb-28 text-left">
+      <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Experience</h1>
 
-        <div className="details p-10 bg-teal-200">
+        <div className="details p-10 bg-trans-box">
           <h1 className='font-bold'>QA Engineer</h1>
           <h1 className='font-bold'>Company name</h1>
           <h1 className='font-bold'>Duration</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque harum doloribus asperiores soluta rem impedit delectus culpa commodi suscipit, tempora eaque voluptatem odio ipsa veniam ea corrupti iusto odit!</p>
-
         </div>
-
-          <div className="grid grid-cols-5 pb-4 bg-pink-400">
-            <div className="col-span-1">
-              <h1>Title</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Company</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Duration</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Responsibilities</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-5 pb-4">
-            <div className="col-span-1">
-              <h1>Title</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Company</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Duration</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Responsibilities</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-5 pb-4">
-            <div className="col-span-1">
-              <h1>Title</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Company</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Duration</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-            <div className="col-span-1">
-              <h1>Responsibilities</h1>
-            </div>
-            <div className="col-span-4">
-              <p>Qa Engineer</p>
-            </div>
-          </div>
+        <div className="details p-10 bg-trans-box">
+          <h1 className='font-bold'>QA Engineer</h1>
+          <h1 className='font-bold'>Company name</h1>
+          <h1 className='font-bold'>Duration</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque harum doloribus asperiores soluta rem impedit delectus culpa commodi suscipit, tempora eaque voluptatem odio ipsa veniam ea corrupti iusto odit!</p>
+        </div>
+        <div className="details p-10 bg-trans-box">
+          <h1 className='font-bold'>QA Engineer</h1>
+          <h1 className='font-bold'>Company name</h1>
+          <h1 className='font-bold'>Duration</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque harum doloribus asperiores soluta rem impedit delectus culpa commodi suscipit, tempora eaque voluptatem odio ipsa veniam ea corrupti iusto odit!</p>
+        </div>
 
       </div>
 
