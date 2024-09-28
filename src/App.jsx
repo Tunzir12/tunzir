@@ -40,10 +40,10 @@ function App() {
               <Link to={'/about'} className='bg-ghiya pl-8 pr-8 rounded-2xl'>About</Link>
             </li>
             <li className='text-right pr-24 hover:text-6xl'>
-              <Link to={'/project'} className='bg-ghiya pl-4 pr-4 rounded-2xl'>Projects</Link>
+              <Link to={'/project'} className='bg-ghiya pl-8 pr-8 rounded-2xl'>Projects</Link>
             </li>
             <li className='text-right text-balance hover:text-6xl'>
-              <Link to={'/contact'} className='bg-ghiya pl-4 pr-4 rounded-2xl'>Contact</Link>
+              <Link to={'/contact'} className='bg-ghiya pl-8 pr-8 rounded-2xl'>Contact</Link>
             </li>
           </ul>
         </div>

@@ -6,7 +6,18 @@ import { Link } from 'react-router-dom'
 
 
 const About = () => {
+
+  {/*Random skill box colors */}
+  const skills = ['C', 'C++' , 'Python' ,'JavaScript', 'PHP' , 'HTML' , 'CSS' , 'R', 'Laravel' , 'React.js' , 'Express.js' , 'Bootstrap CSS' , 'TailwindCSS' , 'Linux','Windows', 'SQL', 'MySQL', 'PostgreSQL',' Manual testing', 'API testing', 'Black-Box Testing' , 'White-Box Testing', 'Jira', 'Jmeter', 'Selenium','Vscode', 'eclipse', 'codeblocks','Adobe Photoshop', 'Adobe XD', 'Figma', 'MS Office suite', 'Google suite',
+    'Blender 3D']
+
+  const getRandomColor = () =>{
+    const colors = ['#f099a6','#da6df2','#6d71f2','#f2a26d','#42a5a8','#9942a8','#c6c78b' ,'#FF5733', '#33FFBD', '#FF33A6', '#335BFF', '#FFD133',  '#8E44AD', '#E74C3C', '#2980B9', '#27AE60']
+    return colors[Math.floor(Math.random() * colors.length)]
+  }
+
   return (
+
     <div className="min-h-screen bg-gradient-to-r from-Beige to-white to-90%">
       {/*switch to dark mode */}
       <div className="navbar p-14 text-left">
@@ -18,8 +29,9 @@ const About = () => {
         <div className="col-p-1 text-left">
           <Link to={'/'} className='pl-32'>Home</Link>
         </div>
+
         <div className="col-p-1 text-right ">
-          <Link to={'/contact'} className='pr-32'>Contact</Link>
+          <Link to={'/project'} className='pr-32'>Project</Link>
         </div>
       </div>
 
@@ -34,25 +46,15 @@ const About = () => {
         <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Skills</h1>
         <div className="p-4  font-bold grid grid-cols-7 gap-4">
 
-          <p className='p-2 rounded-md bg-cyan-600'>C</p>
-          <p className='rounded-md bg-pink-400'>C++</p>
-          <p className='p-2 rounded-md bg-teal-500'>JavaScript</p>
-          <p className='p-2 rounded-md bg-green-500'>Python</p>
-          <p className='p-2 rounded-md bg-yellow-200'>HTML</p>
-          <p className='p-2 rounded-md bg-emerald-300'>CSS</p>
-          <p className='p-2 rounded-md bg-orange-300'>PHP</p>
-          <p className='p-2 rounded-md bg-lime-500'>React.JS</p>
-          <p className='p-2 rounded-md bg-cyan-600'>Express.JS</p>
-          <p className='p-2 rounded-md bg-fuchsia-500'>Bootstrap</p>
-          <p className='p-2 rounded-md bg-red-400'>TailwindCSS</p>
-          <p className='p-2 rounded-md bg-pink-400'>C++</p>
-          <p className='p-2 rounded-md bg-teal-500'>JavaScript</p>
-          <p className='p-2 rounded-md bg-green-500'>Python</p>
-          <p className='p-2 rounded-md bg-yellow-200'>HTML</p>
-          <p className='p-2 rounded-md bg-emerald-300'>CSS</p>
-          <p className='p-2 rounded-md bg-orange-300'>PHP</p>
-          <p className='p-2 rounded-md bg-lime-500'>React.JS</p>
-          <p className='p-2 rounded-md bg-fuchsia-500'>Bootstrap</p>
+          {skills.map((skill,index) => (
+            <p
+            key={index}
+            className='p-2 rounded-md text-center'
+            style={{ backgroundColor: getRandomColor() }}  // Apply random background color
+            >
+            {skill}
+            </p>
+          ))}
         </div>
       </div>
 
@@ -61,9 +63,9 @@ const About = () => {
       <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Experience</h1>
 
         <div className="details p-10 bg-trans-box">
-          <h1 className='font-bold'>QA Engineer</h1>
-          <h1 className='font-bold'>Company name</h1>
-          <h1 className='font-bold'>Duration</h1>
+          <h1 className='font-bold'>Trainee QA Engineer</h1>
+          <h1 className='font-bold'>Vcube SOft & Tech</h1>
+          <h1 className='font-bold'>October,2021 - October,2022</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque harum doloribus asperiores soluta rem impedit delectus culpa commodi suscipit, tempora eaque voluptatem odio ipsa veniam ea corrupti iusto odit!</p>
         </div>
         <div className="details p-10 bg-trans-box">
