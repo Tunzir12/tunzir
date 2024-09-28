@@ -23,15 +23,20 @@ const Project = () => {
         </div>
 
         <div className="col-p-1 text-right ">
-          <Link to={'/project'} className='pr-32'>Contact</Link>
+          <Link to={'/contact'} className='pr-32'>Contact</Link>
         </div>
       </div>
 
       {/*Body */}
       <div className="p-32 text-left">
       <div className="details p-10 bg-trans-box">
-          <h1 className='font-bold'>Trainee QA Engineer</h1>
-          <h1 className='font-bold'>Vcube SOft & Tech</h1>
+          <h1 className='font-bold'>Online Portfolio</h1>
+          <div className="flex flex-row space-x-6">
+            <h1 className='font-bold'>Skills</h1>
+            <span>JavaScript</span>
+            <span>Vite</span>
+            <span>React.JS</span>
+          </div>
           <h1 className='font-bold'>October,2021 - October,2022</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cumque harum doloribus asperiores soluta rem impedit delectus culpa commodi suscipit, tempora eaque voluptatem odio ipsa veniam ea corrupti iusto odit!</p>
         </div>
