@@ -1,32 +1,56 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faMoon } from '@fortawesome/free-regular-svg-icons'
+import { Link } from 'react-router-dom'
 
 
 const Contact = () => {
+
+
   return (
-    <div>
-      <nav className='font-nanum p-10'>
-        <div className="flex flex-row font-bold text-indigo-600 text-3xl">
-          <Link to="/" className='basis-1/4'>
-            <FontAwesomeIcon icon={faArrowLeft} />
-            Go to Homepage
-          </Link>
+
+    <div className="min-h-screen bg-gradient-to-r from-Beige to-white to-90%">
+      {/*switch to dark mode */}
+      <div className="navbar p-14 text-left">
+        <FontAwesomeIcon className='text-2xl' icon={faMoon} />
+      </div>
+
+      {/*Navbar */}
+      <div className="navlink grid grid-cols-2 font-bold">
+        <div className="col-p-1 text-left">
+          <Link to={'/'} className='pl-32'>Home</Link>
         </div>
-      </nav>
 
-      <section className='justify-center bg-indigo-500 p-20'>
-        <div className="form grid grid-col-2 col-span-3">
-
-              <input type="text" placeholder='Full Name' />
-              <input type="email" placeholder='Email' />
-              <textarea name="Message" id="msg" placeholder='Message'></textarea>
-              <button className='bg-green-400'>Submit</button>
-
+        <div className="col-p-1 text-right ">
+          <Link to={'/project'} className='pr-32'>Project</Link>
         </div>
-      </section>
+      </div>
+
+      {/*Body */}
+      <div className="p-32">
+        <div className="form">
+          <form >
+          <label htmlFor="">Name:</label>
+          <input type="text" name="" id="" placeholder='Name' required/>
+          <label htmlFor="">Email:</label>
+          <input type="email" name="" id="" placeholder='Email' required/>
+          <label htmlFor="">Subject:</label>
+          <input type="text" name="" id="" placeholder='Subject'/>
+          <label htmlFor="">Message:</label>
+          <textarea name="message" id="" placeholder='Message'></textarea>
+          </form>
+        </div>
+          
+
+      </div>
+
+      <div className="footer text-center p-4">
+        <span className='text-ghiya'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
+      </div>
+      
     </div>
+    
   )
 }
 
