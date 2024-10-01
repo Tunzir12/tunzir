@@ -7,10 +7,13 @@ const ModeSwitch = () => {
     const [darkMode, setDarkMode] = useState(false)
 
     const toggleDark = () => {
+      setDarkMode(!darkMode);
       // Toggle the data attribute on the root element for dark mode
-     
-        setDarkMode(!darkMode);
-        document.body.classList.toggle('dark-mode', !darkMode);
+      if (darkMode) {
+        document.documentElement.removeAttribute('data-theme')
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark')
+      }
 
     }
   

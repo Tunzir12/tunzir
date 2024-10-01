@@ -19,7 +19,7 @@ const About = () => {
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-r from-Beige to-white to-90%">
+    <div className="min-h-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
       <ModeSwitch />
 
       {/*Navbar */}
@@ -34,9 +34,12 @@ const About = () => {
       </div>
 
       {/*About me section*/}
-      <div className="pt-32 pl-32 pr-32 pb-10 text-left">
-        <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> About me</h1>
+      <div className="pt-32 pl-32 pr-32 pb-10 text-left ">
+      <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> About me</h1>
+        <div className='bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40 p-4'>
+        
         <p className='aboutme'>Hi there! I'm Maliha Tunzira, a Computer Science graduate student at Linköping University with a passion for technology and a knack for problem-solving. My journey in tech has been fueled by curiosity and a desire to create meaningful solutions that make a difference.<br /><br />When I'm not coding or testing software, you can find me indulging in my hobbies. I love watching movies and documentaries, exploring new cultures through travel, playing video games, and experimenting in the kitchen with new recipes. These interests not only keep me entertained but also inspire my creativity in tech. <br /><br />I'm always eager to expand my skill set and stay updated on the latest trends in technology. You can check out my projects on GitHub at <a target='_blank' href="https:/github.com/Tunzir12">github.com/Tunzir12</a>, where I showcase my work and the technologies I'm passionate about.</p>
+      </div>
       </div>
 
       {/*Skill section */}
@@ -60,13 +63,13 @@ const About = () => {
       <div className="pl-32 pr-32 pb-28 text-left">
       <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Experience</h1>
 
-        <div className="details p-10 bg-trans-box">
+        <div className="details p-10 bg-trans-box bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
           <h1 className='font-bold'>QA Automation Engineer - Internship</h1>
           <h1 className='font-bold'>A1QA</h1>
           <h1 className='font-bold'>January, 2023 - April, 2023</h1>
           <p className='pt-4'>During my internship at A1QA, I worked as a QA Automation Engineer, focusing on web scraping projects using JavaScript to extract and analyze data from websites. This role allowed me to develop my skills in automation and data analysis. I actively contributed to the quality assurance process by assisting in writing and maintaining test cases, as well as executing regression tests. My efforts helped in identifying and resolving critical bugs, which improved overall software stability and functionality.</p>
         </div>
-        <div className="details pl-10 pr-10 pb-10 bg-trans-box">
+        <div className="details pl-10 pr-10 pb-10 bg-trans-box bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
           <h1 className='font-bold'>Trainee QA Engineer</h1>
           <h1 className='font-bold'>Vcube Soft and Tech</h1>
           <h1 className='font-bold'>October, 2021 - October, 2022</h1>

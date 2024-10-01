@@ -11,7 +11,7 @@ const Project = () => {
 
   return (
 
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
       <ModeSwitch />
 
       {/*Navbar */}
