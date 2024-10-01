@@ -12,8 +12,7 @@ function App() {
 
     <div className="h-screen bg-gradient-to-r from-Beige to-white to-90%">
       < ModeSwitch />
-
-
+      
       <div className="grid grid-cols-6">
 
         {/*social sidebar*/}

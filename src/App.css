@@ -1,14 +1,13 @@
-#root {
+body{
     text-align: center;
-
+    background: linear-gradient(to right, #f3e0a4, #ffffff);
   }
 
-nav{
-  color: #7b3b16;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 20px;  
+body.dark-mode{
+  background: linear-gradient(to right, #690172 15%, #080384);
+  color: #ffffff;
 }
+
 
 
 

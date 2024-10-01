@@ -3,6 +3,7 @@ import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMoon } from '@fortawesome/free-regular-svg-icons'
 import { Link } from 'react-router-dom'
+import ModeSwitch from '../components/navbar'
 
 
 const Project = () => {
@@ -10,11 +11,8 @@ const Project = () => {
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-r from-Beige to-white to-90%">
-      {/*switch to dark mode */}
-      <div className="navbar p-14 text-left">
-        <FontAwesomeIcon className='text-2xl' icon={faMoon} />
-      </div>
+    <div className="min-h-screen">
+      <ModeSwitch />
 
       {/*Navbar */}
       <div className="navlink grid grid-cols-2 font-bold">

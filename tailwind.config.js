@@ -11,13 +11,6 @@ export default {
     "./src/pages/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    colors:{
-      'Beige' : '#fde7b1',
-      'white' : '#ffffff',
-      'white-50' : '#e0dfd5',
-      'ghiya' : '#bda679',
-      'trans-box' : '#f0dbb1'
-    },
     extend: {
       fontFamily: {
         'logo' : ['Lovers Quarrel','cursive'],
