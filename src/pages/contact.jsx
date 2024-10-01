@@ -60,7 +60,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="footer text-center p-4">
+      <div className="text-center pt-2">
         <span className='text-ghiya'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
       </div>
       

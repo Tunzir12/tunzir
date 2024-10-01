@@ -3,7 +3,7 @@ import './App.css'
 import { Link } from 'react-router-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { faEnvelope, faMoon, faSun } from '@fortawesome/free-regular-svg-icons'
+import ModeSwitch from './components/navbar'
 
 
 function App() {
@@ -11,10 +11,7 @@ function App() {
   return (
 
     <div className="h-screen bg-gradient-to-r from-Beige to-white to-90%">
-
-      <div className="navbar p-14 max-w-5xl text-left">
-        <FontAwesomeIcon className='text-2xl' icon={faMoon} />
-      </div>
+      < ModeSwitch />
 
 
       <div className="grid grid-cols-6">
