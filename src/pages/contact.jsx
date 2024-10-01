@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-regular-svg-icons'
+import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom'
 import ModeSwitch from '../components/navbar'
 
@@ -26,7 +26,7 @@ const Contact = () => {
       </div>
 
       {/*Body */}
-      <div className="pl-32 pt-20 pr-32 ">        
+      <div className="pl-32 pt-20 pr-32 pb-10 ">        
         <div className="grid grid-cols-3">
           <div className="pl-40 pr-40 col-span-2 flex flex-col space-y-3 text-left">
             <div>
@@ -45,21 +45,37 @@ const Contact = () => {
               <label className='font-bold'>Mesasge</label>
               <textarea name="" className='rounded-lg w-full' id=""></textarea>
             </div>
-            <div className="text-right">
-            <button className='font-bold p-2 bg-ghiya w-1/3'>Submit</button>
+            <div className="text-right ">
+            <button className='font-bold p-2 w-1/3 bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40'>Submit</button>
 
             </div>
           </div>
-          <div className="pr-40 col-span-1">
-            <div className="p-28 bg-ghiya">
+          
+          <div className="pr-40 pt-12 col-span-1 ">
+            <div className="p-10 bg-orange-200">
+              <div className="social">
+                <h2>Or,</h2>
+                <p>Add me socials</p>
+                <div className="flex flex-row gap-4 pt-4 place-content-center">
 
+                  <div className='text-2xl ring-offset-4 text-center bg-white bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40'>
+                  <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'> <FontAwesomeIcon icon={faLinkedin} /></a>
+                  </div>
+                  <div className='text-2xl bg-orange-200 dark:bg-fuchsia-600 p-2'>
+                  <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faGithub} /></a>
+
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
       <div className="text-center pt-2">
-        <span className='text-ghiya'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
+        <span className='text-stone-900'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
       </div>
       
     </div>

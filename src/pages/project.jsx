@@ -29,7 +29,7 @@ const Project = () => {
       <div className="p-32 text-left">
         <div className="grid grid-cols-2 gap-3">
           {/*project 1 */}
-          <div className="details p-10 bg-trans-box space-y-4 col-span-1">
+          <div className="details p-10 bg-trans-box space-y-4 col-span-1 bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
               <h1 className='font-bold text-xl'>Online Portfolio</h1>
               <div className="flex flex-row space-x-6">
                 <h1 className='font-bold'>Tools</h1>
@@ -43,7 +43,7 @@ const Project = () => {
             </div>
 
           {/*project 1 */}
-            <div className="details p-10 bg-trans-box space-y-4 col-span-1">
+            <div className="details p-10 bg-trans-box space-y-4 col-span-1 bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
               <h1 className='font-bold text-xl'>Text-editor</h1>
               <div className="flex flex-row space-x-6">
                 <h1 className='font-bold'>Tools</h1>
