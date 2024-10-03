@@ -26,10 +26,10 @@ const Project = () => {
       </div>
 
       {/*Body */}
-      <div className="p-32 text-left">
+      <div className="pl-32 pr-32 pt-10 text-left">
         <div className="grid grid-cols-2 gap-3">
           {/*project 1 */}
-          <div className="details p-10 bg-trans-box space-y-4 col-span-1 bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
+          <div className="details p-10 space-y-4 col-span-1 rounded-lg bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
               <h1 className='font-bold text-xl'>Online Portfolio</h1>
               <div className="flex flex-row space-x-6">
                 <h1 className='font-bold'>Tools</h1>
@@ -39,18 +39,18 @@ const Project = () => {
                 <span>Figma</span>
               </div>
               <p>This is a responsive online portfolio built using Vite and React.js. The tech stack includes HTML, CSS, Tailwind CSS, JavaScript, and React Router Dom for navigation. By developing this project from scratch, I've enhanced my skills in modern web design, front-end development, and deployment processes. Through this project, I've gained valuable experience in creating responsive layouts, implementing smooth user interactions, and optimizing performance using Vite's build tools. The source code is managed using Git, allowing for version control and easy updates. </p>
-              <button className='p-4 bg-ghiya'><a href="https://github.com/Tunzir12/tunzir" target='_blank'>View the project on github</a></button>
+              <button className='p-4 bg-orange-50 rounded-lg'><a href="https://github.com/Tunzir12/tunzir" target='_blank'>View the project on github</a></button>
             </div>
 
-          {/*project 1 */}
-            <div className="details p-10 bg-trans-box space-y-4 col-span-1 bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
+          {/*project 2 */}
+            <div className="details p-10 space-y-4 col-span-1 rounded-lg bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
               <h1 className='font-bold text-xl'>Text-editor</h1>
               <div className="flex flex-row space-x-6">
                 <h1 className='font-bold'>Tools</h1>
                 <span>C++</span>
               </div>
               <p>The text-editor is a module developed using C++ in the Visual Studio Code IDE. It leverages C++'s standard library, containers, and algorithms to provide a range of text manipulation functionalities. The key features of this text editor include: Text search functionality, Text removal capabilities, Text replacement options, Text printing from files. One of the significant aspects of this project is its modularity and extensibility. It allows other developers to easily add to the codebase, implement new features, and improve existing ones.</p>
-              <button className='p-4 bg-ghiya'><a href="https://github.com/Tunzir12/Text-editor" target='_blank'>View the project on github</a></button>
+              <button className='p-4 bg-orange-50 rounded-lg'><a href="https://github.com/Tunzir12/Text-editor" target='_blank'>View the project on github</a></button>
             </div>
 
           </div>
@@ -58,8 +58,8 @@ const Project = () => {
 
       </div>
 
-      <div className="footer text-center p-4">
-        <span className='text-ghiya'>Visit My <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page for more projects</span>
+      <div className="footer text-center pt-10">
+        <span className=''>Visit My <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page for more projects</span>
       </div>
       
     </div>

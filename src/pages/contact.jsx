@@ -39,9 +39,9 @@ const Contact = () => {
       const timer = setTimeout(() => {
         setIsSubmitted(false);
         setIsError(false);
-      }, 4000);  // Message disappears after 3 seconds
+      }, 4000);  // Message disappears after 4 seconds
 
-      return () => clearTimeout(timer);  // Cleanup the timer on unmount
+      return () => clearTimeout(timer); 
     }
   }, [isSubmitted, isError]);
 
@@ -64,7 +64,7 @@ const Contact = () => {
 
       {/*Body */}
       <div className="pl-32 pt-10 pr-32 pb-10 ">        
-        <div className="grid grid-cols-3 bg-orange-200 bg-opacity-50 p-10 rounded-lg">
+        <div className="grid grid-cols-3 bg-orange-200 bg-opacity-50 p-10 dark:bg-gradient-to-tl dark:from-cyan-800 dark:to-blue-900 rounded-lg">
           <div className="pl-40 pr-40 col-span-2  text-left">
             <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3' >
             <div className='col-span-1 pt-2'>
@@ -93,7 +93,7 @@ const Contact = () => {
             </div>
             
             <div className="text-right col-span-5 ">
-            <button type='submit' className='font-bold p-2 w-1/3 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'>Submit</button>
+            <button type='submit' className='font-bold p-2 w-1/3 bg-orange-50 rounded-lg dark:bg-fuchsia-800'>Submit</button>
 
             </div>
             </form>
@@ -137,7 +137,7 @@ const Contact = () => {
             )}
 
       <div className="text-center pt-10">
-        <span className='text-stone-900'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
+        <span className='text-stone-900 dark:text-gray-500'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
       </div>
       
     </div>

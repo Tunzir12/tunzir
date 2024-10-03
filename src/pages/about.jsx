@@ -34,7 +34,7 @@ const About = () => {
       </div>
 
       {/*About me section*/}
-      <div className="pt-32 pl-32 pr-32 pb-10 text-left ">
+      <div className="pt-10 pl-32 pr-32 pb-10 text-left ">
       <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> About me</h1>
         <div className='bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40 p-4'>
         
@@ -43,7 +43,7 @@ const About = () => {
       </div>
 
       {/*Skill section */}
-      <div className="pl-32 pr-32 pb-28 text-left">
+      <div className="pl-32 pr-32 pb-16 text-left">
         <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Skills</h1>
         <div className="p-4  font-bold grid grid-cols-7 gap-4">
 
