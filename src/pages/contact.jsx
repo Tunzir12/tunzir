@@ -71,25 +71,25 @@ const Contact = () => {
               <label className='font-bold'>Name</label>
             </div>
             <div className="col-span-4">
-              <input type="text" name='name' className='rounded-lg w-full bg-orange-50' required />
+              <input type="text" name='name' className='rounded-lg w-full bg-orange-50  dark:bg-fuchsia-800 bg-opacity-40 dark:bg-opacity-40' required />
             </div>
             <div className='col-span-1'>
               <label className='font-bold'>Email</label>
             </div>
             <div className="col-span-4">
-              <input type="email" name='email' className='rounded-lg w-full bg-orange-50' required />
+              <input type="email" name='email' className='rounded-lg w-full bg-orange-50 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40' required />
             </div>
             <div className='col-span-1'>
               <label className='font-bold'>Subject</label>
             </div>
             <div className="col-span-4">
-              <input type="text" name='subject' className='rounded-lg w-full bg-orange-50' required/>
+              <input type="text" name='subject' className='rounded-lg w-full bg-orange-50 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40' required/>
             </div>
             <div className='col-span-1'>
               <label className='font-bold'>Mesasge</label>
             </div>
             <div className="col-span-4">
-              <textarea name="message" className='rounded-lg w-full bg-orange-50' id="" required/>
+              <textarea name="message" className='rounded-lg w-full bg-orange-50 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40' id="" required/>
             </div>
             
             <div className="text-right col-span-5 ">
@@ -102,13 +102,13 @@ const Contact = () => {
           
           
           <div className="pr-40 pt-4 col-span-1 ">
-            <div className="p-10 bg-orange-50 rounded-lg">
+            <div className="p-10 bg-orange-50 dark:bg-fuchsia-800 dark:bg-opacity-40 rounded-lg">
               <div className="social space-y-4 ">
                 <h2 className='font-bold'>Or,</h2>
                 <p>Add me socials</p>
                 <div className="flex flex-row gap-4 pt-4 place-content-center">
 
-                  <div className='text-2xl text-center p-2 space-x-4 dark:bg-fuchsia-800 dark:bg-opacity-40'>
+                  <div className='text-2xl text-center p-2 space-x-4 '>
                     <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'> <FontAwesomeIcon icon={faLinkedin} /></a>
                     <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faGithub} /></a>
                     <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faEnvelope} /></a>
@@ -125,13 +125,13 @@ const Contact = () => {
 
                {/* Success/Failure Message with Pop-up Effect */}
                {isSubmitted && !isError && (
-              <div className="text-green-500">
+              <div className="text-green-500 font-bold">
                 Your message has been sent successfully!
               </div>
             )}
 
             {isError && (
-              <div className="text-red-500">
+              <div className="text-red-500 font-bold">
                 Failed to send the message. Please try again.
               </div>
             )}
