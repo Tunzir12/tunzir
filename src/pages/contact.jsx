@@ -1,4 +1,5 @@
-import React from 'react'
+import React , {useRef, useState, useEffect} from 'react'
+import emailjs from '@emailjs/browser';
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -9,10 +10,45 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 const Contact = () => {
 
+  const form = useRef();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_291mu0i', 'template_bvkjc9h', form.current, {
+        publicKey: '3iKwBxNucnxoji1Dl',
+      })
+      .then(
+        () => {
+          setIsSubmitted(true);
+          setIsError(false);
+          e.target.reset(); 
+        },
+        (error) => {
+          console.error('FAILED...', error.text);
+          setIsError(true); 
+        },
+      );
+  };
+
+  useEffect(() => {
+    if (isSubmitted || isError) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+        setIsError(false);
+      }, 4000);  // Message disappears after 3 seconds
+
+      return () => clearTimeout(timer);  // Cleanup the timer on unmount
+    }
+  }, [isSubmitted, isError]);
 
   return (
 
     <div className="min-h-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
+
       <ModeSwitch />
 
       {/*Navbar */}
@@ -29,37 +65,41 @@ const Contact = () => {
       {/*Body */}
       <div className="pl-32 pt-10 pr-32 pb-10 ">        
         <div className="grid grid-cols-3 bg-orange-200 bg-opacity-50 p-10 rounded-lg">
-          <div className="pl-40 pr-40 col-span-2 grid grid-cols-5 space-y-3 text-left">
+          <div className="pl-40 pr-40 col-span-2  text-left">
+            <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3' >
             <div className='col-span-1 pt-2'>
               <label className='font-bold'>Name</label>
             </div>
             <div className="col-span-4">
-              <input type="text" className='rounded-lg w-full bg-orange-50' required />
+              <input type="text" name='name' className='rounded-lg w-full bg-orange-50' required />
             </div>
             <div className='col-span-1'>
               <label className='font-bold'>Email</label>
             </div>
             <div className="col-span-4">
-              <input type="email" className='rounded-lg w-full bg-orange-50' required />
+              <input type="email" name='email' className='rounded-lg w-full bg-orange-50' required />
             </div>
             <div className='col-span-1'>
               <label className='font-bold'>Subject</label>
             </div>
             <div className="col-span-4">
-              <input type="text" className='rounded-lg w-full bg-orange-50' required/>
+              <input type="text" name='subject' className='rounded-lg w-full bg-orange-50' required/>
             </div>
             <div className='col-span-1'>
               <label className='font-bold'>Mesasge</label>
             </div>
             <div className="col-span-4">
-              <textarea name="" className='rounded-lg w-full bg-orange-50' id="" required/>
+              <textarea name="message" className='rounded-lg w-full bg-orange-50' id="" required/>
             </div>
             
             <div className="text-right col-span-5 ">
-            <button className='font-bold p-2 w-1/3 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'>Submit</button>
+            <button type='submit' className='font-bold p-2 w-1/3 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'>Submit</button>
 
             </div>
+            </form>
           </div>
+
+          
           
           <div className="pr-40 pt-4 col-span-1 ">
             <div className="p-10 bg-orange-50 rounded-lg">
@@ -82,6 +122,19 @@ const Contact = () => {
 
         </div>
       </div>
+
+               {/* Success/Failure Message with Pop-up Effect */}
+               {isSubmitted && !isError && (
+              <div className="text-green-500">
+                Your message has been sent successfully!
+              </div>
+            )}
+
+            {isError && (
+              <div className="text-red-500">
+                Failed to send the message. Please try again.
+              </div>
+            )}
 
       <div className="text-center pt-10">
         <span className='text-stone-900'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
