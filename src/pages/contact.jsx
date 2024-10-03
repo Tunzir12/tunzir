@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom'
 import ModeSwitch from '../components/navbar'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 
 const Contact = () => {
@@ -26,43 +27,51 @@ const Contact = () => {
       </div>
 
       {/*Body */}
-      <div className="pl-32 pt-20 pr-32 pb-10 ">        
-        <div className="grid grid-cols-3">
-          <div className="pl-40 pr-40 col-span-2 flex flex-col space-y-3 text-left">
-            <div>
-              <label className='font-bold'>Name</label><br />
-              <input type="text" className='rounded-lg w-full bg-trans-box' />
+      <div className="pl-32 pt-10 pr-32 pb-10 ">        
+        <div className="grid grid-cols-3 bg-orange-200 bg-opacity-50 p-10 rounded-lg">
+          <div className="pl-40 pr-40 col-span-2 grid grid-cols-5 space-y-3 text-left">
+            <div className='col-span-1 pt-2'>
+              <label className='font-bold'>Name</label>
             </div>
-            <div>
+            <div className="col-span-4">
+              <input type="text" className='rounded-lg w-full bg-orange-50' required />
+            </div>
+            <div className='col-span-1'>
               <label className='font-bold'>Email</label>
-              <input type="email" className='rounded-lg w-full' />
             </div>
-            <div>
+            <div className="col-span-4">
+              <input type="email" className='rounded-lg w-full bg-orange-50' required />
+            </div>
+            <div className='col-span-1'>
               <label className='font-bold'>Subject</label>
-              <input type="text" className='rounded-lg w-full' />
             </div>
-            <div>
+            <div className="col-span-4">
+              <input type="text" className='rounded-lg w-full bg-orange-50' required/>
+            </div>
+            <div className='col-span-1'>
               <label className='font-bold'>Mesasge</label>
-              <textarea name="" className='rounded-lg w-full' id=""></textarea>
             </div>
-            <div className="text-right ">
-            <button className='font-bold p-2 w-1/3 bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40'>Submit</button>
+            <div className="col-span-4">
+              <textarea name="" className='rounded-lg w-full bg-orange-50' id="" required/>
+            </div>
+            
+            <div className="text-right col-span-5 ">
+            <button className='font-bold p-2 w-1/3 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'>Submit</button>
 
             </div>
           </div>
           
-          <div className="pr-40 pt-12 col-span-1 ">
-            <div className="p-10 bg-orange-200">
-              <div className="social">
-                <h2>Or,</h2>
+          <div className="pr-40 pt-4 col-span-1 ">
+            <div className="p-10 bg-orange-50 rounded-lg">
+              <div className="social space-y-4 ">
+                <h2 className='font-bold'>Or,</h2>
                 <p>Add me socials</p>
                 <div className="flex flex-row gap-4 pt-4 place-content-center">
 
-                  <div className='text-2xl ring-offset-4 text-center bg-white bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40'>
-                  <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'> <FontAwesomeIcon icon={faLinkedin} /></a>
-                  </div>
-                  <div className='text-2xl bg-orange-200 dark:bg-fuchsia-600 p-2'>
-                  <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faGithub} /></a>
+                  <div className='text-2xl text-center p-2 space-x-4 dark:bg-fuchsia-800 dark:bg-opacity-40'>
+                    <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'> <FontAwesomeIcon icon={faLinkedin} /></a>
+                    <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faGithub} /></a>
+                    <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faEnvelope} /></a>
 
                   </div>
 
@@ -74,7 +83,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="text-center pt-2">
+      <div className="text-center pt-10">
         <span className='text-stone-900'>Visit My <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'>Linkedin</a> or <a href="https://github.com/Tunzir12" target='_blank'>Github</a> page.</span>
       </div>
       
