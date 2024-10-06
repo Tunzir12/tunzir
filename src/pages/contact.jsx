@@ -111,7 +111,7 @@ const Contact = () => {
                   <div className='text-2xl text-center p-2 space-x-4 '>
                     <a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'> <FontAwesomeIcon icon={faLinkedin} /></a>
                     <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faGithub} /></a>
-                    <a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faEnvelope} /></a>
+
 
                   </div>
 

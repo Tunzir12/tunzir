@@ -39,7 +39,7 @@ const Project = () => {
                 <span>Figma</span>
               </div>
               <p>This is a responsive online portfolio built using Vite and React.js. The tech stack includes HTML, CSS, Tailwind CSS, JavaScript, and React Router Dom for navigation. By developing this project from scratch, I've enhanced my skills in modern web design, front-end development, and deployment processes. Through this project, I've gained valuable experience in creating responsive layouts, implementing smooth user interactions, and optimizing performance using Vite's build tools. The source code is managed using Git, allowing for version control and easy updates. </p>
-              <button className='p-4 bg-orange-50 rounded-lg'><a href="https://github.com/Tunzir12/tunzir" target='_blank'>View the project on github</a></button>
+              <button className='p-4 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'><a href="https://github.com/Tunzir12/tunzir" target='_blank'>View the project on github</a></button>
             </div>
 
           {/*project 2 */}
@@ -50,7 +50,7 @@ const Project = () => {
                 <span>C++</span>
               </div>
               <p>The text-editor is a module developed using C++ in the Visual Studio Code IDE. It leverages C++'s standard library, containers, and algorithms to provide a range of text manipulation functionalities. The key features of this text editor include: Text search functionality, Text removal capabilities, Text replacement options, Text printing from files. One of the significant aspects of this project is its modularity and extensibility. It allows other developers to easily add to the codebase, implement new features, and improve existing ones.</p>
-              <button className='p-4 bg-orange-50 rounded-lg'><a href="https://github.com/Tunzir12/Text-editor" target='_blank'>View the project on github</a></button>
+              <button className='p-4 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'><a href="https://github.com/Tunzir12/Text-editor" target='_blank'>View the project on github</a></button>
             </div>
 
           </div>
