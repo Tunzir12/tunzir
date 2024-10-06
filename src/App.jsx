@@ -25,12 +25,12 @@ function App() {
         </div>
 
         {/*Jumbtron */}
-        <div className="jumbo col-span-3 text-left pt-20 sm:max-md:col-span-5">
+        <div className="jumbo col-span-3 text-left pt-20 3xs:max-lg:col-span-5">
           <h1 className='font-bold text-5xl'>Hi ! I am Maliha Tunzira.</h1>
           <p className='text-xl pt-10 pr-10'>Software engineer | I am passionate about creating software solutions that are user-friendly, accessible and environmental friendly.</p>
         </div>
 
-        <div className=" navlinks col-span-2 pt-24 pl-20 pr-10 md:max-lg:pl-10 md:max-lg:pt-20 sm:max-md:hidden">
+        <div className=" navlinks col-span-2 pt-24 pl-20 pr-10 md:max-lg:pl-10 lg:max-xl:pt-20 3xs:max-lg:hidden">
           <ul className='space-y-14 text-4xl font-bold'>
             <li className='text-right  hover:text-6xl '>
               <Link to={'/about'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>About</Link>
@@ -46,15 +46,15 @@ function App() {
 
       </div>
 
-      <div className="p-16 justify-center flex flex-row space-x-10 font-bold md:max-2xl:hidden">
+      <div className="p-16 justify-center flex flex-row space-x-10 font-bold 3xs:max-[520px]:pt-10 3xs:max-[520px]:space-x-1 lg:hidden">
 
-          <div className='hover:text-6xl '>
+          <div className='hover:text-6xl 3xs:max-[520px]:hover:text-2xl'>
             <Link to={'/about'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>About</Link>
           </div>
-          <div className='hover:text-6xl'>
+          <div className='hover:text-6xl 3xs:max-[520px]:hover:text-2xl'>
             <Link to={'/project'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>Projects</Link>
           </div>
-          <div className='hover:text-6xl'>
+          <div className='hover:text-6xl 3xs:max-[520px]:hover:text-2xl'>
             <Link to={'/contact'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>Contact</Link>
           </div> 
 

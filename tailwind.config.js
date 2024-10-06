@@ -12,6 +12,12 @@ export default {
   ],
   theme: {
     extend: {
+      screens:{
+        'xs' : '425px',
+        '2xs' : '375px',
+        '3xs' : '320px',
+
+      },
       fontFamily: {
         'logo' : ['Lovers Quarrel','cursive'],
         'bebas' : ['Bebas Neue', 'sans-sherif'],
