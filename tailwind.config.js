@@ -17,6 +17,7 @@ export default {
         '2xs' : '375px',
         '3xs' : '320px',
         "xlq" : '1372px',
+        'sm-2' : '520px',
 
       },
       fontFamily: {

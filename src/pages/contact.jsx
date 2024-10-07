@@ -63,10 +63,10 @@ const Contact = () => {
       </div>
 
       {/*Body */}
-      <div className="pl-32 pt-10 pr-32 pb-10 md:max-lg:pl-20 md:max-lg:pr-20">        
-        <div className="grid grid-cols-3 bg-orange-200 bg-opacity-50 p-10 dark:bg-gradient-to-tl dark:from-cyan-800 dark:to-blue-900 rounded-lg">
-          <div className="pl-40 pr-40 col-span-2 text-left lg:max-xlq:pl-10 lg:max-xlq:pr-16 md:max-lg:pl-2 md:max-lg:pr-2">
-            <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3 ' >
+      <div className="pl-32 pt-10 pr-32 pb-10 md:max-lg:pl-20 md:max-lg:pr-20 sm-2:max-md:pl-10  sm-2:max-md:pr-10 3xs:max-sm-2:pl-4 3xs:max-sm-2:pr-4 ">        
+        <div className="grid grid-cols-3 3xs:max-md:flex 3xs:max-md:flex-col bg-orange-200 bg-opacity-50 p-10 dark:bg-gradient-to-tl dark:from-cyan-800 dark:to-blue-900 rounded-lg">
+          <div className="pl-40 pr-40 col-span-2 text-left lg:max-xlq:pl-10 lg:max-xlq:pr-16 md:max-lg:pl-2 md:max-lg:pr-2 3xs:max-md:pl-2 3xs:max-md:pr-2 ">
+            <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3 3xs:max-sm-2:flex 3xs:max-sm-2:flex-col' >
             <div className='col-span-1 pt-2'>
               <label className='font-bold'>Name</label>
             </div>
@@ -101,7 +101,7 @@ const Contact = () => {
 
           
           
-          <div className="pr-40 pt-4 col-span-1 lg:max-xlq:pr-10 md:max-lg:pr-2 md:max-lg:pl-2">
+          <div className="pr-40 pt-4 col-span-1 lg:max-xlq:pr-10 md:max-lg:pr-2 md:max-lg:pl-2 3xs:max-md:pl-10 3xs:max-md:pr-10 3xs:max-md:pt-10">
             <div className="p-10 bg-orange-50  lg:max-xlq:p-4 md:max-lg:p-2 dark:bg-fuchsia-800 dark:bg-opacity-40 rounded-lg">
               <div className="social space-y-4 ">
                 <h2 className='font-bold'>Or,</h2>
