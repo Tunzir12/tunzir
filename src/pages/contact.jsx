@@ -63,10 +63,10 @@ const Contact = () => {
       </div>
 
       {/*Body */}
-      <div className="pl-32 pt-10 pr-32 pb-10">        
+      <div className="pl-32 pt-10 pr-32 pb-10 md:max-lg:pl-20 md:max-lg:pr-20">        
         <div className="grid grid-cols-3 bg-orange-200 bg-opacity-50 p-10 dark:bg-gradient-to-tl dark:from-cyan-800 dark:to-blue-900 rounded-lg">
-          <div className="pl-40 pr-40 col-span-2 text-left">
-            <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3' >
+          <div className="pl-40 pr-40 col-span-2 text-left lg:max-xlq:pl-10 lg:max-xlq:pr-16 md:max-lg:pl-2 md:max-lg:pr-2">
+            <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3 ' >
             <div className='col-span-1 pt-2'>
               <label className='font-bold'>Name</label>
             </div>
@@ -101,9 +101,9 @@ const Contact = () => {
 
           
           
-          <div className="pr-40 pt-4 col-span-1 md:max-[1338px]:pr-10 ">
-            <div className="p-10 bg-orange-50 md:max-[1338px]:p-6 dark:bg-fuchsia-800 dark:bg-opacity-40 rounded-lg">
-              <div className="social space-y-4 md:max-[1338px]:space-y-2">
+          <div className="pr-40 pt-4 col-span-1 lg:max-xlq:pr-10 md:max-lg:pr-2 md:max-lg:pl-2">
+            <div className="p-10 bg-orange-50  lg:max-xlq:p-4 md:max-lg:p-2 dark:bg-fuchsia-800 dark:bg-opacity-40 rounded-lg">
+              <div className="social space-y-4 ">
                 <h2 className='font-bold'>Or,</h2>
                 <p className='text-sm'>Add me on socials</p>
                 <div className="flex flex-row gap-4 pt-4 place-content-center md:max-[1338px]:pt-2">
