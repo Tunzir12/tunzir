@@ -25,16 +25,16 @@ const About = () => {
       {/*Navbar */}
       <div className="navlink grid grid-cols-2 font-bold">
         <div className="col-p-1 text-left">
-          <Link to={'/'} className='pl-32'>Home</Link>
+          <Link to={'/'} className='pl-32 3xs:max-sm:pl-6 '>Home</Link>
         </div>
 
         <div className="col-p-1 text-right ">
-          <Link to={'/project'} className='pr-32'>Project</Link>
+          <Link to={'/project'} className='pr-32 3xs:max-sm:pr-6 '>Project</Link>
         </div>
       </div>
 
       {/*About me section*/}
-      <div className="pt-10 pl-32 pr-32 pb-10 text-left ">
+      <div className="pt-10 pl-32 pr-32 pb-10 text-left 3xs:max-sm:pl-10 3xs:max-sm:pr-10">
       <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> About me</h1>
         <div className='bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40 p-4'>
         
@@ -43,14 +43,14 @@ const About = () => {
       </div>
 
       {/*Skill section */}
-      <div className="pl-32 pr-32 pb-16 text-left">
+      <div className="pl-32 pr-32 pb-16 text-left 3xs:max-sm:pl-10 3xs:max-sm:pr-10 ">
         <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Skills</h1>
-        <div className="p-4  font-bold grid grid-cols-7 gap-4">
+        <div className="p-4  font-bold grid grid-cols-7 gap-4 3xs:max-xl:flex 3xs:max-xl:flex-wrap">
 
           {skills.map((skill,index) => (
             <p
             key={index}
-            className='p-2 rounded-md text-center'
+            className='p-2 rounded-md text-center '
             style={{ backgroundColor: getRandomColor() }}  // Apply random background color
             >
             {skill}
@@ -60,7 +60,7 @@ const About = () => {
       </div>
 
       {/*Experience Section */}
-      <div className="pl-32 pr-32 pb-28 text-left">
+      <div className="pl-32 pr-32 pb-28 text-left 3xs:max-sm:pl-10 3xs:max-sm:pr-10">
       <h1 className='font-bold text-2xl pb-10'><FontAwesomeIcon icon={faCircleDot} /> Experience</h1>
 
         <div className="details p-10 bg-trans-box bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">

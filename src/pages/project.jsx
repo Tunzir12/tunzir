@@ -17,21 +17,21 @@ const Project = () => {
       {/*Navbar */}
       <div className="navlink grid grid-cols-2 font-bold">
         <div className="col-p-1 text-left">
-          <Link to={'/'} className='pl-32'>Home</Link>
+          <Link to={'/'} className='pl-32 3xs:max-sm:pl-6'>Home</Link>
         </div>
 
         <div className="col-p-1 text-right ">
-          <Link to={'/contact'} className='pr-32'>Contact</Link>
+          <Link to={'/contact'} className='pr-32 3xs:max-sm:pr-6'>Contact</Link>
         </div>
       </div>
 
       {/*Body */}
-      <div className="pl-32 pr-32 pt-10 text-left">
-        <div className="grid grid-cols-2 gap-3">
+      <div className="pl-32 pr-32 pt-10 text-left 3xs:max-sm:pl-10 3xs:max-sm:pr-10">
+        <div className="grid grid-cols-2 gap-3  3xs:max-lg:flex  3xs:max-lg:flex-col">
           {/*project 1 */}
-          <div className="details p-10 space-y-4 col-span-1 rounded-lg bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
+          <div className="details p-10 space-y-4 col-span-1 rounded-lg  bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
               <h1 className='font-bold text-xl'>Online Portfolio</h1>
-              <div className="flex flex-row space-x-6">
+              <div className="flex flex-row space-x-6 3xs:max-[654px]:flex-wrap">
                 <h1 className='font-bold'>Tools</h1>
                 <span>JavaScript</span>
                 <span>Vite</span>
