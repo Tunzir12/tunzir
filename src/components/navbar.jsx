@@ -1,6 +1,6 @@
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faMoon, faSun } from '@fortawesome/free-regular-svg-icons'
 import { useState } from 'react'
+import sun from '../assets/Sun.svg'
+import moon from '../assets/Moon.svg'
 
 const ModeSwitch = () => {
     
@@ -20,9 +20,9 @@ const ModeSwitch = () => {
   return (
     <div>
 
-          <div className="navbar p-14 max-w-5xl text-2xl text-left">
-          <button onClick={toggleDark}>
-              {darkMode? <FontAwesomeIcon icon={faSun}/> : <FontAwesomeIcon icon={faMoon}/>}
+          <div className="navbar p-14 max-w-5xl text-left">
+          <button onClick={toggleDark} className='' >
+              {darkMode? <img src={sun} alt="sun" /> : <img src={moon} alt="moon" /> }
           </button>
           </div>
 
