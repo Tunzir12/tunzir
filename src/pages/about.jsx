@@ -70,10 +70,10 @@ const About = () => {
           <p className='pt-4'>During my internship at A1QA, I worked as a QA Automation Engineer, focusing on web scraping projects using JavaScript to extract and analyze data from websites. This role allowed me to develop my skills in automation and data analysis. I actively contributed to the quality assurance process by assisting in writing and maintaining test cases, as well as executing regression tests. My efforts helped in identifying and resolving critical bugs, which improved overall software stability and functionality.</p>
         </div>
         <div className="details pl-10 pr-10 pb-10 bg-trans-box bg-orange-200 bg-opacity-40 dark:bg-fuchsia-800 dark:bg-opacity-40">
-          <h1 className='font-bold'>Trainee QA Engineer</h1>
+          <h1 className='font-bold'>QA Engineer</h1>
           <h1 className='font-bold'>Vcube Soft and Tech</h1>
           <h1 className='font-bold'>October, 2021 - October, 2022</h1>
-          <p className='pt-4'>As a Trainee QA Engineer at Vcube Soft and Tech, I gained valuable experience in software quality assurance over a year-long period. My responsibilities included close collaboration with the development team to understand project requirements and verify software functionality. I developed comprehensive test plans and cases, executed test scripts, and provided detailed test reports. One of my key achievements was improving testing efficiency by automating manual tests, which significantly reduced testing time and increased overall productivity. This role enhanced my skills in test planning, execution, and automation, while also strengthening my ability to work effectively in a team environment.</p>
+          <p className='pt-4'>As a QA Engineer at Vcube Soft and Tech, I gained valuable experience in software quality assurance over a year-long period. My responsibilities included close collaboration with the development team to understand project requirements and verify software functionality. I developed comprehensive test plans and cases, executed test scripts, and provided detailed test reports. One of my key achievements was improving testing efficiency by automating manual tests, which significantly reduced testing time and increased overall productivity. This role enhanced my skills in test planning, execution, and automation, while also strengthening my ability to work effectively in a team environment.</p>
         </div>
 
       </div>

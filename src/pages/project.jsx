@@ -1,7 +1,7 @@
 import React from 'react'
 import '../App.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-regular-svg-icons'
+import python from '../assets/python-data-analysis.png'
+import portfolio from '../assets/online-portfolio.png'
 import { Link } from 'react-router-dom'
 import ModeSwitch from '../components/navbar'
 
@@ -35,6 +35,7 @@ const Project = () => {
                 <h1 className='font-bold'>Tools</h1>
                 <span>Python</span>
               </div>
+              <img src={python} className='rounded-lg w-auto' alt="" />
               <p>This is a responsive online portfolio built using Vite and React.js. The tech stack includes HTML, CSS, Tailwind CSS, JavaScript, and React Router Dom for navigation. </p>
               <button className='p-4 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'><a href="https://github.com/Tunzir12/Python-Data-Analysis" target='_blank'>View the project on github</a></button>
             </div>
@@ -49,6 +50,7 @@ const Project = () => {
                 <span>React.JS</span>
                 <span>Figma</span>
               </div>
+              <img src={portfolio} className='w-auto' alt="" />
               <p>This is a responsive online portfolio built using Vite and React.js. The tech stack includes HTML, CSS, Tailwind CSS, JavaScript, and React Router Dom for navigation. </p>
               <button className='p-4 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'><a href="https://github.com/Tunzir12/tunzir" target='_blank'>View the project on github</a></button>
             </div>
