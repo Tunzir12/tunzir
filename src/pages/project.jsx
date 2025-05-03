@@ -1,4 +1,3 @@
-import React from 'react'
 import '../App.css'
 import python from '../assets/python-data-analysis.png'
 import portfolio from '../assets/online-portfolio.png'
@@ -64,7 +63,7 @@ const Project = () => {
                 <span>C++</span>
               </div>
               <img src={textEditor} className='w-auto' alt="" />
-              <p>The text-editor is a module developed using C++ in the Visual Studio Code IDE. It leverages C++'s standard library, containers, and algorithms to provide a range of text manipulation functionalities.</p>
+              <p>The text-editor is a module developed using C++ in the Visual Studio Code IDE. It leverages C++&apos;s standard library, containers, and algorithms to provide a range of text manipulation functionalities.</p>
               <button className='p-4 bg-orange-50 rounded-lg dark:bg-fuchsia-800 dark:bg-opacity-40'><a href="https://github.com/Tunzir12/Text-editor" target='_blank'>View the project on github</a></button>
             </div>
 
