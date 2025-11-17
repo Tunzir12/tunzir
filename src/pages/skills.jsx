@@ -4,6 +4,7 @@ const Skill = () => {
   return (
     <div>
       <h1>Skills</h1>
+      <section>Bold</section>
     </div>
   )
 }
