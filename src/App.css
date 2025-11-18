@@ -8,8 +8,4 @@ body.dark-mode{
   color: #ffffff;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+@import "tailwindcss";
