@@ -1,13 +1,11 @@
-
 import './App.css'
-import { Link } from 'react-router-dom'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import ModeSwitch from './components/navbar'
-
+import Home from './pages/home'
+import About from './pages/about'
+import Project from './pages/project'
+import Contact from './pages/contact'
+import Skill from './pages/skills'
 
 function App() {
-
   return (
 
     <div className="h-screen w-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
