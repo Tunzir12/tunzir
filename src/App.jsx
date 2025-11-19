@@ -10,7 +10,7 @@ function App() {
 
   return (
 
-    <div className="min-h-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
+    <div className="h-screen w-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
       < ModeSwitch />
 
       <div className="grid grid-cols-6 md:max-lg:pt-16">
