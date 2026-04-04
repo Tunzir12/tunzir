@@ -41,6 +41,9 @@ Go to **Realtime Database → Rules** and update with:
     ".write": "auth != null",
     "projects": {
       ".indexOn": ["createdAt"]
+    },
+    "blogs": {
+      ".indexOn": ["createdAt"]
     }
   }
 }
@@ -76,6 +79,10 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
     match /projects/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+    match /blogs/{allPaths=**} {
       allow read: if true;
       allow write: if request.auth != null;
     }
@@ -203,8 +210,9 @@ npm install firebase
 
 ## Database Structure
 
-Your projects will be stored in Realtime Database under `/projects/` with this structure:
+Your projects and blogs will be stored in Realtime Database under `/projects/` and `/blogs/` with this structure:
 
+### Projects
 ```
 {
   "projects": {
@@ -217,9 +225,24 @@ Your projects will be stored in Realtime Database under `/projects/` with this s
       "imageUrl": "https://firebasestorage.googleapis.com/...",
       "createdAt": "2026-04-04T10:30:00.000Z",
       "updatedAt": "2026-04-04T10:30:00.000Z"
-    },
-    "uniqueId2": {
-      // ... another project
+    }
+  }
+}
+```
+
+### Blogs
+```
+{
+  "blogs": {
+    "uniqueId1": {
+      "title": "My Blog Post Title",
+      "content": "Full blog post content...",
+      "tags": ["Tutorial", "React", "JavaScript"],
+      "liveLink": "https://blog-post.com",
+      "githubLink": "https://github.com/username/repo",
+      "imageUrl": "https://firebasestorage.googleapis.com/...",
+      "createdAt": "2026-04-04T10:30:00.000Z",
+      "updatedAt": "2026-04-04T10:30:00.000Z"
     }
   }
 }
@@ -239,8 +262,9 @@ Your projects will be stored in Realtime Database under `/projects/` with this s
     ".read": true,
     ".write": "auth != null && auth.token.email == 'your-email@gmail.com'",
     "projects": {
-      ".indexOn": ["createdAt"]
-    }
+      ".indexOn": ["createdAt"]    },
+    "blogs": {
+      ".indexOn": ["createdAt"]    }
   }
 }
 ```

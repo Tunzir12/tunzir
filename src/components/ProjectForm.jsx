@@ -3,7 +3,7 @@ import { ref, push, set, update } from 'firebase/database'
 import { database, storage } from '../config/firebase'
 import { ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage'
 
-const ProjectForm = ({ project, onSaved }) => {
+const ProjectForm = ({ project, onClose, onSuccess }) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -122,7 +122,8 @@ const ProjectForm = ({ project, onSaved }) => {
           imageFile: null
         })
         setError('')
-        onSaved()
+        onSuccess()
+        onClose()
       }
     } catch (err) {
       console.error('Error saving project:', err)
@@ -267,6 +268,13 @@ const ProjectForm = ({ project, onSaved }) => {
 
       {/* Submit Button */}
       <div className="flex gap-4">
+        <button
+          type="button"
+          onClick={onClose}
+          className="flex-1 px-6 py-3 bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-lg transition"
+        >
+          Cancel
+        </button>
         <button
           type="submit"
           disabled={loading}

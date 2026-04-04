@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { ref, onValue } from 'firebase/database'
 import { database } from '../config/firebase'
 import Navbar from '../components/navbar'
+import { AuthContext } from '../context/AuthContext'
+import ProjectForm from '../components/ProjectForm'
 
 const Project = () => {
   const [projects, setProjects] = useState([])
   const [loading, setLoading] = useState(true)
+  const [showForm, setShowForm] = useState(false)
+  const { user } = useContext(AuthContext)
 
   useEffect(() => {
     fetchProjects()
@@ -36,6 +40,11 @@ const Project = () => {
     }
   }
 
+  const handleProjectAdded = () => {
+    setShowForm(false)
+    // Projects will be automatically updated via onValue listener
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-100 via-neutral-50 to-white dark:bg-gradient-to-b dark:from-fuchsia-900 dark:via-blue-950 dark:to-gray-900 dark:text-white">
       <Navbar />
@@ -47,9 +56,17 @@ const Project = () => {
             <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-800 dark:text-white">
               My Projects
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
               Explore the projects I've built with modern technologies and best practices
             </p>
+            {user && (
+              <button
+                onClick={() => setShowForm(true)}
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition duration-300"
+              >
+                + Add New Project
+              </button>
+            )}
           </div>
 
           {loading ? (
@@ -147,6 +164,14 @@ const Project = () => {
           </p>
         </div>
       </footer>
+
+      {/* Project Form Modal */}
+      {showForm && (
+        <ProjectForm
+          onClose={() => setShowForm(false)}
+          onSuccess={handleProjectAdded}
+        />
+      )}
     </div>
   )
 }
