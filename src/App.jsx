@@ -1,9 +1,44 @@
 
 import './App.css'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import Navbar from './components/navbar'
+import { ref, onValue } from 'firebase/database'
+import { database } from './config/firebase'
 
 function App() {
+  const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchProjects()
+  }, [])
+
+  const fetchProjects = () => {
+    try {
+      setLoading(true)
+      const projectsRef = ref(database, 'projects')
+      onValue(projectsRef, (snapshot) => {
+        const data = snapshot.val()
+        if (data) {
+          const projectsArray = Object.entries(data).map(([key, value]) => ({
+            id: key,
+            ...value
+          }))
+          // Sort by creation date (newest first)
+          projectsArray.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          setProjects(projectsArray)
+        } else {
+          setProjects([])
+        }
+        setLoading(false)
+      })
+    } catch (error) {
+      console.error('Error fetching projects:', error)
+      setLoading(false)
+    }
+  }
+
   const skills = [
     'React',
     'JavaScript',
@@ -11,30 +46,6 @@ function App() {
     'Responsive Design',
     'Web Accessibility',
     'UI/UX Development'
-  ]
-
-  const featuredProjects = [
-    {
-      id: 1,
-      title: 'Project One',
-      description: 'A modern web application showcasing best practices in web development',
-      tags: ['React', 'Node.js', 'MongoDB'],
-      link: '/project'
-    },
-    {
-      id: 2,
-      title: 'Project Two',
-      description: 'User-friendly solution built with accessibility and performance in mind',
-      tags: ['React', 'Tailwind CSS', 'Web API'],
-      link: '/project'
-    },
-    {
-      id: 3,
-      title: 'Project Three',
-      description: 'Environmental-friendly application with sustainable design principles',
-      tags: ['JavaScript', 'Design System', 'SEO'],
-      link: '/project'
-    }
   ]
 
   const testimonials = [
@@ -120,39 +131,70 @@ function App() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
             Featured Projects
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {featuredProjects.map((project) => (
-              <div 
-                key={project.id}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group"
-              >
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-fuchsia-400 transition">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag, index) => (
-                      <span 
-                        key={index}
-                        className="px-3 py-1 bg-orange-100 dark:bg-fuchsia-900 text-orange-700 dark:text-fuchsia-300 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+          {loading ? (
+            <p className="text-center text-gray-600 dark:text-gray-400">Loading projects...</p>
+          ) : projects.length === 0 ? (
+            <p className="text-center text-gray-600 dark:text-gray-400">
+              No projects yet. Check back soon!
+            </p>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-8">
+              {projects.slice(0, 3).map((project) => (
+                <div 
+                  key={project.id}
+                  className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group"
+                >
+                  {project.imageUrl && (
+                    <img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+                    />
+                  )}
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-fuchsia-400 transition">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags?.map((tag, index) => (
+                        <span 
+                          key={index}
+                          className="px-3 py-1 bg-orange-100 dark:bg-fuchsia-900 text-orange-700 dark:text-fuchsia-300 text-sm rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-4">
+                      {project.liveLink && (
+                        <a 
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-orange-600 dark:text-fuchsia-400 font-semibold hover:underline"
+                        >
+                          Live Demo →
+                        </a>
+                      )}
+                      {project.githubLink && (
+                        <a 
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block text-orange-600 dark:text-fuchsia-400 font-semibold hover:underline"
+                        >
+                          GitHub →
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <Link 
-                    to={project.link}
-                    className="inline-block text-orange-600 dark:text-fuchsia-400 font-semibold hover:underline"
-                  >
-                    Learn more →
-                  </Link>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

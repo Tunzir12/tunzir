@@ -11,4 +11,11 @@ export default defineConfig({
     },
   },
   base: '/tunzir/', // GitHub repository name
+  server: {
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost',
+      port: 5174,
+    },
+  },
 })
