@@ -1,65 +1,214 @@
 
 import './App.css'
 import { Link } from 'react-router-dom'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import ModeSwitch from './components/navbar'
-
+import Navbar from './components/navbar'
 
 function App() {
+  const skills = [
+    'React',
+    'JavaScript',
+    'Node.js',
+    'Responsive Design',
+    'Web Accessibility',
+    'UI/UX Development'
+  ]
+
+  const featuredProjects = [
+    {
+      id: 1,
+      title: 'Project One',
+      description: 'A modern web application showcasing best practices in web development',
+      tags: ['React', 'Node.js', 'MongoDB'],
+      link: '/project'
+    },
+    {
+      id: 2,
+      title: 'Project Two',
+      description: 'User-friendly solution built with accessibility and performance in mind',
+      tags: ['React', 'Tailwind CSS', 'Web API'],
+      link: '/project'
+    },
+    {
+      id: 3,
+      title: 'Project Three',
+      description: 'Environmental-friendly application with sustainable design principles',
+      tags: ['JavaScript', 'Design System', 'SEO'],
+      link: '/project'
+    }
+  ]
+
+  const testimonials = [
+    {
+      quote: 'Maliha delivered an exceptional solution that exceeded our expectations.',
+      author: 'Client Name',
+      role: 'Project Manager'
+    },
+    {
+      quote: 'Great attention to detail and a strong focus on accessibility and user experience.',
+      author: 'Team Lead',
+      role: 'Tech Lead'
+    }
+  ]
 
   return (
-
-    <div className="min-h-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
-      < ModeSwitch />
-
-      <div className="grid grid-cols-6 md:max-lg:pt-16">
-
-        {/*social sidebar*/}
-        <div className="text-left col-span-1 pt-24 ">
-            <ul className='text-2xl w-10 bg-orange-200 dark:bg-fuchsia-600 p-2 space-y-5'>
-            <li><a href="https://www.linkedin.com/in/m16tunzi/" target='_blank'> <FontAwesomeIcon icon={faLinkedin} /></a></li>
-            <li><a href="https://github.com/Tunzir12" target='_blank'> <FontAwesomeIcon icon={faGithub} />
-            </a></li>
-            </ul>
-        </div>
-
-        {/*Jumbtron */}
-        <div className="jumbo col-span-3 text-left pt-20 3xs:max-lg:col-span-5">
-          <h1 className='font-bold text-5xl'>Hi ! I am Maliha Tunzira.</h1>
-          <p className='text-xl pt-10 pr-10'>Software engineer | I am passionate about creating software solutions that are user-friendly, accessible and environmental friendly.</p>
-        </div>
-
-        <div className=" navlinks col-span-2 pt-24 pl-20 pr-10 md:max-lg:pl-10 lg:max-xl:pt-20 3xs:max-lg:hidden">
-          <ul className='space-y-14 text-4xl font-bold'>
-            <li className='text-right  hover:text-6xl '>
-              <Link to={'/about'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>About</Link>
-            </li>
-            <li className='text-right pr-24 hover:text-6xl'>
-              <Link to={'/project'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>Projects</Link>
-            </li>
-            <li className='text-right text-balance hover:text-6xl'>
-              <Link to={'/contact'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>Contact</Link>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div className="p-16 justify-center flex flex-row space-x-10 font-bold 3xs:max-[520px]:pt-10 3xs:max-[520px]:space-x-1 lg:hidden">
-
-          <div className='hover:text-6xl 3xs:max-[520px]:hover:text-2xl'>
-            <Link to={'/about'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>About</Link>
+    <div className="min-h-screen bg-gradient-to-b from-amber-100 via-neutral-50 to-white dark:bg-gradient-to-b dark:from-fuchsia-900 dark:via-blue-950 dark:to-gray-900 dark:text-white">
+      <Navbar />
+      
+      {/* Hero Section */}
+      <section className="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-red-600 dark:from-fuchsia-400 dark:to-purple-500 bg-clip-text text-transparent">
+            Maliha Tunzira
+          </h1>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+            Creative Problem Solver
+          </h2>
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-4">
+            Building user-friendly, accessible, and sustainable software solutions
+          </p>
+          <p className="text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto">
+            I'm a passionate software engineer dedicated to creating innovative digital experiences that make a meaningful impact on people's lives and our environment.
+          </p>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+            <Link 
+              to="/project"
+              className="px-8 py-4 bg-orange-600 dark:bg-fuchsia-600 text-white font-semibold rounded-lg hover:bg-orange-700 dark:hover:bg-fuchsia-700 transition duration-300 shadow-lg hover:shadow-xl"
+            >
+              View My Work
+            </Link>
+            <Link 
+              to="/contact"
+              className="px-8 py-4 bg-white dark:bg-gray-800 text-orange-600 dark:text-fuchsia-400 font-semibold rounded-lg border-2 border-orange-600 dark:border-fuchsia-400 hover:bg-orange-50 dark:hover:bg-gray-700 transition duration-300"
+            >
+              Get in touch
+            </Link>
           </div>
-          <div className='hover:text-6xl 3xs:max-[520px]:hover:text-2xl'>
-            <Link to={'/project'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>Projects</Link>
+
+          {/* Scroll indicator */}
+          <div className="animate-bounce">
+            <svg className="w-6 h-6 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
-          <div className='hover:text-6xl 3xs:max-[520px]:hover:text-2xl'>
-            <Link to={'/contact'} className='ring-offset-4 bg-orange-200 pl-8 pr-8 rounded-2xl dark:bg-fuchsia-800'>Contact</Link>
-          </div> 
+        </div>
+      </section>
 
-      </div>
+      {/* Skills Section */}
+      <section className="py-20 px-6 bg-white dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+            Core Skills
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <div 
+                key={index}
+                className="p-6 bg-gradient-to-br from-orange-100 to-orange-50 dark:from-fuchsia-900 dark:to-purple-800 rounded-lg shadow hover:shadow-lg transition duration-300 text-center"
+              >
+                <p className="font-semibold text-lg text-gray-800 dark:text-white">{skill}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      {/* Featured Projects Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+            Featured Projects
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredProjects.map((project) => (
+              <div 
+                key={project.id}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition duration-300 overflow-hidden group"
+              >
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-fuchsia-400 transition">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag, index) => (
+                      <span 
+                        key={index}
+                        className="px-3 py-1 bg-orange-100 dark:bg-fuchsia-900 text-orange-700 dark:text-fuchsia-300 text-sm rounded-full"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <Link 
+                    to={project.link}
+                    className="inline-block text-orange-600 dark:text-fuchsia-400 font-semibold hover:underline"
+                  >
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 px-6 bg-white dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+            What People Say
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div 
+                key={index}
+                className="p-8 bg-white dark:bg-gray-700 rounded-lg shadow"
+              >
+                <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 italic">
+                  "{testimonial.quote}"
+                </p>
+                <p className="font-semibold text-gray-800 dark:text-white">
+                  {testimonial.author}
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  {testimonial.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6 text-gray-800 dark:text-white">
+            Ready to work together?
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+            Let's create something amazing. Get in touch and let's discuss your next project.
+          </p>
+          <Link 
+            to="/contact"
+            className="inline-block px-10 py-4 bg-orange-600 dark:bg-fuchsia-600 text-white font-semibold rounded-lg hover:bg-orange-700 dark:hover:bg-fuchsia-700 transition duration-300 shadow-lg hover:shadow-xl text-lg"
+          >
+            Start a Conversation
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 dark:bg-black text-white py-12 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-gray-400">
+            © 2026 Maliha Tunzira. Building solutions that matter.
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }

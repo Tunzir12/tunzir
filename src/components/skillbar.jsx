@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SkillBar = ({skill,level,color}) => {
   return (
     <div className='my-4'>
