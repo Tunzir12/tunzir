@@ -3,7 +3,6 @@ import { useEffect, useState, useContext } from 'react'
 import { ref, onValue } from 'firebase/database'
 import { database } from '../config/firebase'
 import ModeSwitch from '../components/navbar'
-import { Link } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
 import BlogForm from '../components/BlogForm'
 
@@ -50,17 +49,6 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r from-amber-100 to-neutral-50 to-90% dark:bg-gradient-to-r dark:from-fuchsia-900 dark:to-blue-950 dark:text-white">
       <ModeSwitch />
-
-      {/*Navbar */}
-      <div className="navlink grid grid-cols-2 font-bold">
-        <div className="col-p-1 text-left">
-          <Link to={'/'} className='pl-32 3xs:max-sm:pl-6'>Home</Link>
-        </div>
-
-        <div className="col-p-1 text-right ">
-          <Link to={'/contact'} className='pr-32 3xs:max-sm:pr-6'>Contact</Link>
-        </div>
-      </div>
 
       {/*Body */}
       <div className="pl-32 pr-32 pt-10 3xs:max-sm:pl-10 3xs:max-sm:pr-10">
