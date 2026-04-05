@@ -45,7 +45,8 @@ function App() {
     'Node.js',
     'Responsive Design',
     'Web Accessibility',
-    'UI/UX Development'
+    'UI/UX Development',
+    'Firebase'
   ]
 
   const testimonials = [
