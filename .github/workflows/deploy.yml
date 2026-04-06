@@ -33,7 +33,7 @@ jobs:
           echo "VITE_FIREBASE_DATABASE_URL=${{ secrets.VITE_FIREBASE_DATABASE_URL }}" >> .env
       - name: Create .firebaserc
         run: |
-          echo '{"projects":{"default":"${{ secrets.VITE_FIREBASE_PROJECT_ID }}"}}' > .firebaserc
+          echo "{\"projects\":{\"default\":\"${{ secrets.VITE_FIREBASE_PROJECT_ID }}\"}}" > .firebaserc
       - name: Build
         run: npm run build
       - name: Install Firebase CLI
