@@ -57,7 +57,7 @@ const Project = () => {
               My Projects
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-6">
-              Explore the projects I've built with modern technologies and best practices
+              Explore the projects I have built with modern technologies and best practices
             </p>
             {user && (
               <button
