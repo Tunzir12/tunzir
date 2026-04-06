@@ -10,7 +10,7 @@ export default defineConfig({
       plugins: [tailwindcss()],
     },
   },
-  base: '/tunzira/', // GitHub repository name
+  base: '/tunzir/', // GitHub repository name
   server: {
     hmr: {
       protocol: 'ws',
