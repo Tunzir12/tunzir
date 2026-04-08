@@ -78,7 +78,7 @@ function App() {
             Building user-friendly, accessible, and sustainable software solutions
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto">
-            I'm a passionate software engineer dedicated to creating innovative digital experiences that make a meaningful impact on people's lives and our environment.
+            I&apos;m a passionate software engineer dedicated to creating innovative digital experiences that make a meaningful impact on people&apos;s lives and our environment.
           </p>
           
           {/* CTA Buttons */}
@@ -211,7 +211,7 @@ function App() {
                 className="p-8 bg-white dark:bg-gray-700 rounded-lg shadow"
               >
                 <p className="text-lg text-gray-700 dark:text-gray-300 mb-4 italic">
-                  "{testimonial.quote}"
+                  &quot;{testimonial.quote}&quot;
                 </p>
                 <p className="font-semibold text-gray-800 dark:text-white">
                   {testimonial.author}
@@ -232,7 +232,7 @@ function App() {
             Ready to work together?
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-            Let's create something amazing. Get in touch and let's discuss your next project.
+            Let&apos;s create something amazing. Get in touch and let&apos;s discuss your next project.
           </p>
           <Link 
             to="/contact"

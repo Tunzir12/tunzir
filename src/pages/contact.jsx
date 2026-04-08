@@ -1,11 +1,10 @@
-import React , {useRef, useState, useEffect} from 'react'
+import {useRef, useState, useEffect} from 'react'
 import emailjs from '@emailjs/browser';
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { Link } from 'react-router-dom'
 import ModeSwitch from '../components/navbar'
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 
 const Contact = () => {
