@@ -1,9 +1,12 @@
 import { createContext, useState, useEffect } from 'react'
 import { auth, googleProvider } from '../config/firebase'
 import { signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth'
+import PropTypes from 'prop-types';
 
 export const AuthContext = createContext()
 
+
+// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -43,3 +46,7 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   )
 }
+
+AuthProvider.prototype = {
+  children: PropTypes.object,
+};
