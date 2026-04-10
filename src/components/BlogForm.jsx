@@ -15,6 +15,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
   })
   const [loading, setLoading] = useState(false)
   const [imagePreview, setImagePreview] = useState('')
+  const [error, setError] = useState('') // replaced alert() with inline error
 
   useEffect(() => {
     if (blog) {
@@ -32,19 +33,13 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
+    setFormData(prev => ({ ...prev, [name]: value }))
   }
 
   const handleImageChange = (e) => {
     const file = e.target.files[0]
     if (file) {
-      setFormData(prev => ({
-        ...prev,
-        image: file
-      }))
+      setFormData(prev => ({ ...prev, image: file }))
       const reader = new FileReader()
       reader.onload = (e) => setImagePreview(e.target.result)
       reader.readAsDataURL(file)
@@ -59,6 +54,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    setError('')
     setLoading(true)
 
     try {
@@ -79,11 +75,9 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
       }
 
       if (blog) {
-        // Update existing blog
         const blogRef = ref(database, `blogs/${blog.id}`)
         await update(blogRef, blogData)
       } else {
-        // Create new blog
         blogData.createdAt = new Date().toISOString()
         const blogsRef = ref(database, 'blogs')
         await push(blogsRef, blogData)
@@ -91,9 +85,9 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
 
       onSuccess()
       onClose()
-    } catch (error) {
-      console.error('Error saving blog:', error)
-      alert('Error saving blog. Please try again.')
+    } catch (err) {
+      console.error('Error saving blog:', err)
+      setError('Failed to save blog. Please try again.') // inline error
     } finally {
       setLoading(false)
     }
@@ -103,11 +97,27 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
-            {blog ? 'Edit Blog Post' : 'Add New Blog Post'}
-          </h2>
+          <div className="flex justify-between items-center mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              {blog ? 'Edit Blog Post' : 'Add New Blog Post'}
+            </h2>
+            <button
+              onClick={onClose}
+              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-white text-2xl font-bold"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Inline error message */}
+          {error && (
+            <div className="mb-4 p-3 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 rounded-lg text-sm">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Title */}
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Title *
@@ -123,6 +133,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
               />
             </div>
 
+            {/* Content */}
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Content *
@@ -138,6 +149,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
               />
             </div>
 
+            {/* Tags */}
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Tags (comma-separated)
@@ -152,6 +164,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
               />
             </div>
 
+            {/* Live Link */}
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Live Link
@@ -166,6 +179,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
               />
             </div>
 
+            {/* GitHub Link */}
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 GitHub Link
@@ -180,6 +194,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
               />
             </div>
 
+            {/* Image Upload */}
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Featured Image
@@ -201,6 +216,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
               )}
             </div>
 
+            {/* Buttons */}
             <div className="flex gap-4 pt-4">
               <button
                 type="button"
@@ -214,7 +230,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
                 disabled={loading}
                 className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition duration-200"
               >
-                {loading ? 'Saving...' : (blog ? 'Update Blog' : 'Add Blog')}
+                {loading ? 'Saving...' : blog ? 'Update Blog' : 'Add Blog'}
               </button>
             </div>
           </form>
@@ -226,7 +242,7 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
 
 BlogForm.propTypes = {
   blog: PropTypes.shape({
-    id: PropTypes.any,
+    id: PropTypes.string,
     title: PropTypes.string,
     content: PropTypes.string,
     tags: PropTypes.arrayOf(PropTypes.string),
@@ -234,8 +250,8 @@ BlogForm.propTypes = {
     githubLink: PropTypes.string,
     imageUrl: PropTypes.string,
   }),
-  onClose: PropTypes.func,
-  onSuccess: PropTypes.func,
+  onClose: PropTypes.func.isRequired,
+  onSuccess: PropTypes.func.isRequired,
 }
 
 export default BlogForm
