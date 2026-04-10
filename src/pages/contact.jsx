@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser';
 import '../App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub,  faLinkedin } from '@fortawesome/free-brands-svg-icons'
-import { Link } from 'react-router-dom'
 import ModeSwitch from '../components/navbar'
 
 
@@ -50,19 +49,8 @@ const Contact = () => {
 
       <ModeSwitch />
 
-      {/*Navbar */}
-      <div className="navlink grid grid-cols-2 font-bold">
-        <div className="col-p-1 text-left">
-          <Link to={'/'} className='pl-32 3xs:max-sm:pl-6'>Home</Link>
-        </div>
-
-        <div className="col-p-1 text-right ">
-          <Link to={'/project'} className='pr-32 3xs:max-sm:pr-6'>Project</Link>
-        </div>
-      </div>
-
       {/*Body */}
-      <div className="pl-32 pt-10 pr-32 pb-10 md:max-lg:pl-20 md:max-lg:pr-20 sm-2:max-md:pl-10  sm-2:max-md:pr-10 3xs:max-sm-2:pl-4 3xs:max-sm-2:pr-4 ">        
+      <div className="pl-32 pt-20 pr-32 pb-10 md:max-lg:pl-20 md:max-lg:pr-20 sm-2:max-md:pl-10  sm-2:max-md:pr-10 3xs:max-sm-2:pl-4 3xs:max-sm-2:pr-4 ">        
         <div className="grid grid-cols-3 3xs:max-md:flex 3xs:max-md:flex-col bg-orange-200 bg-opacity-50 p-10 dark:bg-gradient-to-tl dark:from-cyan-800 dark:to-blue-900 rounded-lg">
           <div className="pl-40 pr-40 col-span-2 text-left lg:max-xlq:pl-10 lg:max-xlq:pr-16 md:max-lg:pl-2 md:max-lg:pr-2 3xs:max-md:pl-2 3xs:max-md:pr-2 ">
             <form ref={form} onSubmit={sendEmail} className='grid grid-cols-5  space-y-3 3xs:max-sm-2:flex 3xs:max-sm-2:flex-col' >
