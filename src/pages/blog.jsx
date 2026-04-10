@@ -51,7 +51,7 @@ const Blog = () => {
       <ModeSwitch />
 
       {/*Body */}
-      <div className="pl-32 pr-32 pt-10 3xs:max-sm:pl-10 3xs:max-sm:pr-10">
+      <div className="pl-32 pr-32 3xs:max-sm:pl-10 3xs:max-sm:pr-10">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold mb-6">My Blog</h1>
           {user && (

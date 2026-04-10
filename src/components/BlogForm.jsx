@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { ref, push, set, update } from 'firebase/database'
+import { ref, push, update } from 'firebase/database'
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage'
 import { database, storage } from '../config/firebase'
+import PropTypes from 'prop-types'
 
 const BlogForm = ({ blog, onClose, onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -221,6 +222,20 @@ const BlogForm = ({ blog, onClose, onSuccess }) => {
       </div>
     </div>
   )
+}
+
+BlogForm.propTypes = {
+  blog: PropTypes.shape({
+    id: PropTypes.any,
+    title: PropTypes.string,
+    content: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    liveLink: PropTypes.string,
+    githubLink: PropTypes.string,
+    imageUrl: PropTypes.string,
+  }),
+  onClose: PropTypes.func,
+  onSuccess: PropTypes.func,
 }
 
 export default BlogForm

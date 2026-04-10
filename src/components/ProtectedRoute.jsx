@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
 import { AuthContext } from '../context/AuthContext'
+import PropTypes from 'prop-types'
 
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext)
@@ -18,6 +19,10 @@ const ProtectedRoute = ({ children }) => {
   }
 
   return children
+}
+
+ProtectedRoute.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
 export default ProtectedRoute

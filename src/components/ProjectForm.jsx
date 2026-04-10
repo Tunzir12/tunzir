@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { ref, push, set, update } from 'firebase/database'
 import { database, storage } from '../config/firebase'
 import { ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage'
+import PropTypes from 'prop-types'
+
 
 const ProjectForm = ({ project, onClose, onSuccess }) => {
   const [formData, setFormData] = useState({
@@ -17,6 +19,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
+
   useEffect(() => {
     if (project) {
       setFormData({
@@ -27,6 +30,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     }
   }, [project])
 
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormData(prev => ({
@@ -34,6 +38,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
       [name]: value
     }))
   }
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0]
@@ -46,6 +51,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     }
   }
 
+
   const handleAddTag = () => {
     if (tagInput.trim()) {
       setFormData(prev => ({
@@ -56,6 +62,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     }
   }
 
+
   const handleRemoveTag = (index) => {
     setFormData(prev => ({
       ...prev,
@@ -63,21 +70,23 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     }))
   }
 
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
     setLoading(true)
 
+
     try {
       let imageUrl = formData.imageUrl
 
-      // Upload image if a new file is selected
+
       if (formData.imageFile) {
         const imageRef = storageRef(storage, `projects/${Date.now()}_${formData.imageFile.name}`)
         await uploadBytes(imageRef, formData.imageFile)
         imageUrl = await getDownloadURL(imageRef)
 
-        // Delete old image if it exists and it's a Firebase URL
+
         if (project?.imageUrl && project.imageUrl.includes('firebasestorage')) {
           try {
             const oldImageRef = storageRef(storage, project.imageUrl)
@@ -87,6 +96,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
           }
         }
       }
+
 
       const projectData = {
         title: formData.title,
@@ -98,14 +108,14 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         updatedAt: new Date().toISOString()
       }
 
+
       if (project?.id) {
-        // Update existing project
         const projectRef = ref(database, `projects/${project.id}`)
         await update(projectRef, projectData)
         setError('')
-        onSaved()
+        onSuccess()
+        onClose()
       } else {
-        // Add new project
         const projectsRef = ref(database, 'projects')
         const newProjectRef = push(projectsRef)
         await set(newProjectRef, {
@@ -133,6 +143,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     }
   }
 
+
   return (
     <form onSubmit={handleSubmit}>
       {error && (
@@ -141,7 +152,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         </div>
       )}
 
-      {/* Title */}
       <div className="mb-6">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
           Project Title *
@@ -157,7 +167,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         />
       </div>
 
-      {/* Description */}
       <div className="mb-6">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
           Description *
@@ -173,7 +182,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         />
       </div>
 
-      {/* Tags */}
       <div className="mb-6">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
           Technologies / Tags
@@ -214,7 +222,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         </div>
       </div>
 
-      {/* Live Link */}
       <div className="mb-6">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
           Live Demo Link
@@ -229,7 +236,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         />
       </div>
 
-      {/* GitHub Link */}
       <div className="mb-6">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
           GitHub Link
@@ -244,7 +250,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         />
       </div>
 
-      {/* Image Upload */}
       <div className="mb-6">
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
           Project Image
@@ -266,7 +271,6 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         )}
       </div>
 
-      {/* Submit Button */}
       <div className="flex gap-4">
         <button
           type="button"
@@ -286,5 +290,20 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     </form>
   )
 }
+
+ProjectForm.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    liveLink: PropTypes.string,
+    githubLink: PropTypes.string,
+    imageUrl: PropTypes.string,
+  }),
+  onClose: PropTypes.func.isRequired,
+  onSuccess: PropTypes.func.isRequired,
+}
+
 
 export default ProjectForm
