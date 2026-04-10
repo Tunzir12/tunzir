@@ -38,36 +38,7 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              {user && (
-                <>
-                  <li>
-                    <Link 
-                      to="/admin-dashboard"
-                      className="text-gray-700 dark:text-gray-300 font-semibold hover:text-orange-600 dark:hover:text-fuchsia-400 transition duration-300"
-                    >
-                      Admin
-                    </Link>
-                  </li>
-                  <li>
-                    <button
-                      onClick={logoutUser}
-                      className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition duration-300"
-                    >
-                      Logout
-                    </button>
-                  </li>
-                </>
-              )}
-              {!user && (
-                <li>
-                  <Link 
-                    to="/admin-login"
-                    className="px-4 py-2 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition duration-300"
-                  >
-                    Admin Login
-                  </Link>
-                </li>
-              )}
+
             </ul>
 
             {/* Mobile Menu Button */}

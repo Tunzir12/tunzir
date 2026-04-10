@@ -1,12 +1,10 @@
 import { createContext, useState, useEffect } from 'react'
-import { auth, googleProvider } from '../config/firebase'
-import { signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth'
-import PropTypes from 'prop-types';
+import { auth } from '../config/firebase'
+import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
+import PropTypes from 'prop-types'
 
 export const AuthContext = createContext()
 
-
-// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -16,13 +14,12 @@ export const AuthProvider = ({ children }) => {
       setUser(currentUser)
       setLoading(false)
     })
-
     return () => unsubscribe()
   }, [])
 
-  const loginWithGoogle = async () => {
+  const loginWithEmail = async (email, password) => {
     try {
-      const result = await signInWithPopup(auth, googleProvider)
+      const result = await signInWithEmailAndPassword(auth, email, password)
       return result.user
     } catch (error) {
       console.error('Login error:', error)
@@ -41,12 +38,12 @@ export const AuthProvider = ({ children }) => {
   }
 
   return (
-    <AuthContext.Provider value={{ user, loading, loginWithGoogle, logoutUser }}>
+    <AuthContext.Provider value={{ user, loading, loginWithEmail, logoutUser }}>
       {children}
     </AuthContext.Provider>
   )
 }
 
-AuthProvider.prototype = {
-  children: PropTypes.object,
-};
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+}
