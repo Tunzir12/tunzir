@@ -30,7 +30,7 @@ const Project = () => {
             id: key,
             ...value
           }))
-          projectsArray.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          projectsArray.sort((a, b) => new Date(b.date) - new Date(a.date)) // sort by date, newest first
           setProjects(projectsArray)
         } else {
           setProjects([])
@@ -244,7 +244,7 @@ const Project = () => {
                 </button>
               </div>
               <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">
-                {new Date(selectedProject.createdAt).toLocaleDateString()}
+                {new Date(selectedProject.date).toLocaleDateString()}
               </p>
 
               {/* Tags */}

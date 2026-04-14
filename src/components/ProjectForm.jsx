@@ -12,7 +12,8 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
     liveLink: '',
     githubLink: '',
     imageUrl: '',
-    imageFile: null
+    imageFile: null,
+    date: ''
   })
   const [tagInput, setTagInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -23,7 +24,8 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
       setFormData({
         ...project,
         imageFile: null,
-        tags: project.tags || []
+        tags: project.tags || [],
+        date: project.date || ''
       })
     }
   }, [project])
@@ -88,6 +90,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         liveLink: formData.liveLink,
         githubLink: formData.githubLink,
         imageUrl,
+        date: formData.date,
         updatedAt: new Date().toISOString()
       }
 
@@ -99,6 +102,7 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
         const newProjectRef = push(projectsRef)
         await set(newProjectRef, {
           ...projectData,
+          date: formData.date || null,
           createdAt: new Date().toISOString()
         })
       }
@@ -168,6 +172,21 @@ const ProjectForm = ({ project, onClose, onSuccess }) => {
                 placeholder="Describe your project"
               />
             </div>
+
+            {/* Project Completion Date */}
+            <div>
+              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">
+                Completion Date
+              </label>
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleInputChange}
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:outline-none focus:border-orange-500"
+              />
+            </div>
+
 
             {/* Tags */}
             <div>
@@ -295,6 +314,7 @@ ProjectForm.propTypes = {
     liveLink: PropTypes.string,
     githubLink: PropTypes.string,
     imageUrl: PropTypes.string,
+    date: PropTypes.string
   }),
   onClose: PropTypes.func.isRequired,
   onSuccess: PropTypes.func.isRequired,

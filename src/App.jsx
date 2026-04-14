@@ -155,10 +155,10 @@ function App() {
                     <h3 className="text-2xl font-bold mb-3 text-gray-800 dark:text-white group-hover:text-orange-600 dark:group-hover:text-fuchsia-400 transition">
                       {project.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
+                    <div className="flex flex-wrap gap-2 mb-6 line-clamp-2">
                       {project.tags?.map((tag, index) => (
                         <span 
                           key={index}
